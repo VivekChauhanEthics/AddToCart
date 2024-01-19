@@ -1,0 +1,55 @@
+
+.loginCont{
+    margin:8% 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+.loginImage{
+    width:600px;
+    margin:35px 0 0 0;
+}
+.loginInputField{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    .loginCont{
+        margin:5% 0 0 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .loginImage{
+        width:100% !important;
+        height: 250px !important;
+        margin:25px 0 0 0;
+    }
+    .loginInputs{
+        margin-top: 30px;
+        display: block;
+        justify-content:center ;
+    }
+}
+@media only screen and (min-width: 426px) and (max-width: 767px) {
+    .loginCont{
+        margin:11% 0 0 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .loginImage{
+        width:100% !important;
+        height: 250px !important;
+        margin:25px 0 0 0;
+    }
+    .loginInputs{
+        margin-top: 30px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+
+}
