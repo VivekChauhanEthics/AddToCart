@@ -1,4 +1,5 @@
 import React from 'react';
+import "./css/footer.css";
 
 function Footer () {
   const footerStyle = {
@@ -32,24 +33,24 @@ function Footer () {
     <div style={footerStyle}>
       <p>&copy; 2024 Your E-Commerce Store</p>
       <div>
-        <a href="#" style={linkStyle}>
+        <a href="#" style={linkStyle} className='footerLink'>
           Home
         </a>
-        <a href="#" style={linkStyle}>
+        <a href="#" style={linkStyle} className='footerLink'>
           Products
         </a>
-        <a href="#" style={linkStyle}>
+        <a href="#" style={linkStyle} className='footerLink'>
           Contact Us
         </a>
       </div>
       <div style={{ marginTop: '20px' }}>
-        <a href="#" style={linkStyle}>
+        <a href="#" style={linkStyle} className='footerLink'>
           Facebook
         </a>
-        <a href="#" style={linkStyle}>
+        <a href="#" style={linkStyle} className='footerLink'>
           Twitter
         </a>
-        <a href="#" style={linkStyle}>
+        <a href="#" style={linkStyle} className='footerLink'>
           Instagram
         </a>
       </div>
