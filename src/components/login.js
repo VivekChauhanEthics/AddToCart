@@ -1,9 +1,11 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./css/login.css";
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, onAuthStateChanged  } from 'firebase/auth';
+import Header from './Header';
+import Footer from './footer';
 
 // Initialize Firebase 
 const firebaseConfig = {
@@ -31,6 +33,17 @@ function LoginForm({ onLogin }) {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [fullNameError, setFullNameError] = useState('');
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [auth]);
   
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -47,21 +60,21 @@ function LoginForm({ onLogin }) {
 
   const handleRegister = async () => {
 
-    if (!validateEmail(email)) {
+    if (!validateEmail(email.trim())) {
       setEmailError('Please enter a valid email address.');
       return;
     } else {
       setEmailError('');
     }
 
-    if (!validatePassword(password)) {
+    if (!validatePassword(password.trim())) {
       setPasswordError('Password must be at least 6 characters long.');
       return;
     } else {
       setPasswordError('');
     }
 
-    if (!validateFullname(fullName)) {
+    if (!validateFullname(fullName.trim())) {
       setFullNameError('Full name must be at least 4 characters long.');
       return;
     } else {
@@ -69,7 +82,7 @@ function LoginForm({ onLogin }) {
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email.trim(), password.trim());
       console.log('Full Name:', fullName);
       setEmail('');
       setPassword('');
@@ -84,14 +97,14 @@ function LoginForm({ onLogin }) {
 
   const handleLogin = async () => {
 
-    if (!validateEmail(email)) {
+    if (!validateEmail(email.trim())) {
       setEmailError('Please enter a valid email address.');
       return;
     } else {
       setEmailError('');
     }
 
-    if (!validatePassword(password)) {
+    if (!validatePassword(password.trim())) {
       setPasswordError('Password must be at least 6 characters long.');
       return;
     } else {
@@ -99,7 +112,7 @@ function LoginForm({ onLogin }) {
     }
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email.trim(), password.trim());
       const user = userCredential.user;
       setEmail('');
       setPassword('');
@@ -130,59 +143,69 @@ function LoginForm({ onLogin }) {
       alert('Error during Google login:', error.message);
     }
   };
+
+
+
   
   const imgUrl = "https://iglebestg.ebizontech.biz/images/login/login8464.png";
 
   return (
-    <div className='loginCont'>
-        <div>
-            <img src={imgUrl} alt='image-login' className='img-fluid loginImage'/>
-        </div>
-        <div className='ms-lg-5 loginInputs'>
-            <h1 className='text-center'>{isRegistering ? 'Register' : 'Login'}</h1>
-            {isRegistering ? (
-                <div className='loginInputField'>
-                  <div>
-                    <label className='mt-3' type="text">Full Name</label><br/>
-                    <input className='p-1' type="text" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} style={{ width: "300px", background: "#ecf1fe", border: "1px solid #ced4da" }} />
-                    {fullNameError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{fullNameError}</p>}
-                  </div>
-                  <div>
-                    <label className='mt-3' type="text">Email</label><br/>
-                    <input className='p-1' type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
-                    {emailError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{emailError}</p>}
-                  </div>
-                  <div>
-                    <label className='mt-3' type="text">Password</label><br/>
-                    <input className='p-1'  type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
-                    {passwordError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{passwordError}</p>}
-                  </div>
-                  <button className='mt-4 p-1 bg-primary text-white' onClick={handleRegister} style={{width:"300px", border:"1px solid #ced4da"}}>Register</button>
-                </div>
-                ) : (
-                  <div className='loginInputField'>
-                    <div>
-                      <label className='mt-4 ' type="text">Email</label><br/>
-                      <input className='p-1' type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
-                      {emailError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{emailError}</p>}
+    <>
+      <Header/>
+        <div className='loginCont'>
+            <div>
+                <img src={imgUrl} alt='image-login' className='img-fluid loginImage'/>
+            </div>
+            <div className='ms-lg-5 loginInputs'>
+                <h4 className='text-center'>{isRegistering ? 'Create an account' : 'Log in to Exclusive'}</h4>
+                {isRegistering ? (
+                    <div className='loginInputField'>
+                      <div>
+                        <label className='mt-3' type="text">Full Name</label><br/>
+                        <input className='p-1' type="text" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} style={{ width: "300px", background: "#ecf1fe", border: "1px solid #ced4da" }} />
+                        {fullNameError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{fullNameError}</p>}
+                      </div>
+                      <div>
+                        <label className='mt-3' type="text">Email</label><br/>
+                        <input className='p-1' type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
+                        {emailError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{emailError}</p>}
+                      </div>
+                      <div>
+                        <label className='mt-3' type="text">Password</label><br/>
+                        <input className='p-1'  type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
+                        {passwordError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{passwordError}</p>}
+                      </div>
+                      <button className='mt-4 p-1 bg-primary text-white' onClick={handleRegister} style={{width:"300px", border:"1px solid #ced4da"}}>Register</button>
                     </div>
-                    <div>
-                      <label className='mt-3' type="text">Password</label><br/>
-                      <input className='p-1'  type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
-                      {passwordError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{passwordError}</p>}
-                    </div>
-                    <button className='mt-4 p-1 bg-primary text-white' onClick={handleLogin} style={{width:"300px", border:"1px solid #ced4da"}}>Login</button>
-                    <button className='mt-4 pb-1 pt-2  text-white justify-content-center d-flex border-0' onClick={handleGoogleLogin} style={{width:"300px", border:"1px solid #ced4da"}}>
-                      <img className='img-fluid' style={{width:"26px", height:"26px"}} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEkUlEQVR4nO2Zb0wbZRzHn3taesUtRpOJYbo/DoQM5c/GMgryzxkYxbGBiQsbNBCEFGaIY8zCCuaUMSiQAQMGQWAgcSY2GeuNuzpc8NqNvRoCItE3841Dthj3ToNzbX+mVRBI197Zo2VJv8n3XZ+nn89dn6dPrwj5448/HgcoJIWqgGIoxywU4HuQTfwJSsIKBxBAKgJIQzbIJhZBhX+BE/g6VAUU2ccgXwc0UgWU4tvwNmGBJASCqiQsoMa3QRsQ433wOlk4qPEsvCkQ2llTEUAxnoEaFOIdeA3RCumEzWPwtT2IrHCK0K0f+HkUCMX4B9HBk9b0PTwNFJKJC9+NngcVfrDu8En/toJoFw9+EMnhOPGr1+DLCE40eIeAGn/vPXgsMvyHRIfgrbEMT0IlroUmaQpQaAtQKAjOSN6C05hy7Db21zgbW4pN4sI3kyGQQVh5g5+W9PJZfEChZ+ADydAqkVKR4R1vVIHv8IIvwPNwDr0oeP4aFAJ5+P76wJvl22CcfAQaCUCyC/gSPAV6JEEbLWAmdWAmwdHeAIB0wvmV35DweiQBs2x+WcDeURmACv8Hn0lYoAK9hDZiwCSPXwW/VI4E0En/ObuclPSjjRowybROBZY6FPAAyhGJNmrATF5xKWCSdQiZL1gzC2I0XDthO9rUd9e9gImccynAkRm+EAjWzMIbddcW+Qg8dCMQ6iuB3TW3rHwEHrkWQJt9JbCjehKeaoHtVd+C5x+hm7IwXwns1t60Pd2L+JNRHovYTI642UY7fSVwRDc8z0NAduZJ8A+5Z6Geif/jvF4RiEROy3D+puiPvrG4Eii/0DjqXoALVDiDnx0PBhWthENXs6HDGHtJbIGTnfX97u6Arq/iuHsBQBjMsntL4DYzCfRYOGQbDjvg7c2jlZaL11/bJhZ8W496Z2SNyeoK/vVas4XiKH5P88BENtrhfzdthrNMwjL4ylaPJi9wXIrHjwcpjpIeafxswd3VL2lrm+A9KXCBL98df+GvEjrdKfxSP2YTZjyRoDhKmt/SM+d2/6+egsbuylhBkzcwihlX8CvvRP/X4VuFwvfeiNhe1lX3E5/d51hz75zQ+RE9FvZKPq208pHIp5WWzq/2DlCDKXJ38w6PRW1qZ/b15RmU1pyRHDja2uH2FEp9ekrQl+dyutmY1iweAitFGljFdJdxL6VnIw5cGdsVdJkL2zJgjEq8aNxTV8ckTNpfs3JM1kgOFPZQsLXqO6cC77c3dSNPomPjpvkKeNKiwXLYWX1nFfy7TQM/Ik+j10fINHTqfW9IFH5RCJG1Jgd8ev2Xv53o6hJ0cHxiOG7HczVM4oI3JI7pc0HVemGeGq4MEgV+hYT8LBM/K2RN/J+eYxXTRmPo+v3m7jNGNecaMq2iX3lDprWXjWlG3sgwvSe0gY2beseQ5TF4ztXDjqt++caru5C3MzQWGdvM7L9VZDj4WCh4AZ3xuJGJm/icifb+n3xrowck6WeiC1uN+0a1TOLPajptUWVQWu13yH4IzDVk2tSGtMWqa8nzLex+ts8YU2Afg/zxxx/kaf4GzSVnCicBYF0AAAAASUVORK5CYII=" />
-                      <h6 className='ms-2 text-dark'>Continue with Google</h6>
-                    </button>
-                  </div>
-                 )}
-            <p className='mt-2 text-primary text-center' onClick={() => setIsRegistering(!isRegistering)} style={{ cursor: 'pointer' }}>
-                {isRegistering ? 'Already have an account? Login' : "Don't have an account? Register"}
-            </p>
+                    ) : (
+                      <>
+                        <p style={{fontWeight:"400", fontSize:"13px"}}><span style={{fontWeight:"600", fontSize:"14px"}}>ID:</span> ritik@gmail.com <span className='ms-3' style={{fontWeight:"600",fontSize:"14px"}}>Password:</span> Ritik@123</p>
+                        <div className='loginInputField'>
+                          <div>
+                            <label className='mt-4 ' type="text">Email</label><br/>
+                            <input className='p-1' type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
+                            {emailError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{emailError}</p>}
+                          </div>
+                          <div>
+                            <label className='mt-3' type="text">Password</label><br/>
+                            <input className='p-1'  type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{width:"300px", background:"#ecf1fe", border:"1px solid #ced4da"}}/>
+                            {passwordError && <p className="text-danger m-0" style={{fontSize:"12px"}}>{passwordError}</p>}
+                          </div>
+                          <button className='mt-4 p-1 bg-primary text-white' onClick={handleLogin} style={{width:"300px", border:"1px solid #ced4da"}}>Login</button>
+                          <button className='mt-4 pb-1 pt-2  text-white justify-content-center d-flex border-0' onClick={handleGoogleLogin} style={{width:"300px", border:"1px solid #ced4da"}}>
+                            <img className='img-fluid' style={{width:"26px", height:"26px"}} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEkUlEQVR4nO2Zb0wbZRzHn3taesUtRpOJYbo/DoQM5c/GMgryzxkYxbGBiQsbNBCEFGaIY8zCCuaUMSiQAQMGQWAgcSY2GeuNuzpc8NqNvRoCItE3841Dthj3ToNzbX+mVRBI197Zo2VJv8n3XZ+nn89dn6dPrwj5448/HgcoJIWqgGIoxywU4HuQTfwJSsIKBxBAKgJIQzbIJhZBhX+BE/g6VAUU2ccgXwc0UgWU4tvwNmGBJASCqiQsoMa3QRsQ433wOlk4qPEsvCkQ2llTEUAxnoEaFOIdeA3RCumEzWPwtT2IrHCK0K0f+HkUCMX4B9HBk9b0PTwNFJKJC9+NngcVfrDu8En/toJoFw9+EMnhOPGr1+DLCE40eIeAGn/vPXgsMvyHRIfgrbEMT0IlroUmaQpQaAtQKAjOSN6C05hy7Db21zgbW4pN4sI3kyGQQVh5g5+W9PJZfEChZ+ADydAqkVKR4R1vVIHv8IIvwPNwDr0oeP4aFAJ5+P76wJvl22CcfAQaCUCyC/gSPAV6JEEbLWAmdWAmwdHeAIB0wvmV35DweiQBs2x+WcDeURmACv8Hn0lYoAK9hDZiwCSPXwW/VI4E0En/ObuclPSjjRowybROBZY6FPAAyhGJNmrATF5xKWCSdQiZL1gzC2I0XDthO9rUd9e9gImccynAkRm+EAjWzMIbddcW+Qg8dCMQ6iuB3TW3rHwEHrkWQJt9JbCjehKeaoHtVd+C5x+hm7IwXwns1t60Pd2L+JNRHovYTI642UY7fSVwRDc8z0NAduZJ8A+5Z6Geif/jvF4RiEROy3D+puiPvrG4Eii/0DjqXoALVDiDnx0PBhWthENXs6HDGHtJbIGTnfX97u6Arq/iuHsBQBjMsntL4DYzCfRYOGQbDjvg7c2jlZaL11/bJhZ8W496Z2SNyeoK/vVas4XiKH5P88BENtrhfzdthrNMwjL4ylaPJi9wXIrHjwcpjpIeafxswd3VL2lrm+A9KXCBL98df+GvEjrdKfxSP2YTZjyRoDhKmt/SM+d2/6+egsbuylhBkzcwihlX8CvvRP/X4VuFwvfeiNhe1lX3E5/d51hz75zQ+RE9FvZKPq208pHIp5WWzq/2DlCDKXJ38w6PRW1qZ/b15RmU1pyRHDja2uH2FEp9ekrQl+dyutmY1iweAitFGljFdJdxL6VnIw5cGdsVdJkL2zJgjEq8aNxTV8ckTNpfs3JM1kgOFPZQsLXqO6cC77c3dSNPomPjpvkKeNKiwXLYWX1nFfy7TQM/Ik+j10fINHTqfW9IFH5RCJG1Jgd8ev2Xv53o6hJ0cHxiOG7HczVM4oI3JI7pc0HVemGeGq4MEgV+hYT8LBM/K2RN/J+eYxXTRmPo+v3m7jNGNecaMq2iX3lDprWXjWlG3sgwvSe0gY2beseQ5TF4ztXDjqt++caru5C3MzQWGdvM7L9VZDj4WCh4AZ3xuJGJm/icifb+n3xrowck6WeiC1uN+0a1TOLPajptUWVQWu13yH4IzDVk2tSGtMWqa8nzLex+ts8YU2Afg/zxxx/kaf4GzSVnCicBYF0AAAAASUVORK5CYII=" />
+                            <h6 className='ms-2 text-dark'>Continue with Google</h6>
+                          </button>
+                        </div>
+                      </>
+                    )}
+                <p className='mt-2 text-primary text-center' onClick={() => setIsRegistering(!isRegistering)} style={{ cursor: 'pointer' }}>
+                    {isRegistering ? 'Already have an account? Login' : "Don't have an account? Register"}
+                </p>
+            </div>
         </div>
-    </div>
+      <Footer/>
+    </>
   );
 }
 

@@ -43,6 +43,15 @@
     width: 100%;
     height: 600px;
   }
+  .theme-light {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.theme-dark {
+background-color: #000 !important;
+color: #fff !important;
+}
 
   @media only screen and (min-width: 320px) and (max-width: 425px) {
    .contactImg{

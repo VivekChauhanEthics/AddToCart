@@ -3,7 +3,7 @@ import "./css/footer.css";
 
 function Footer () {
   const footerStyle = {
-    backgroundColor: '#f4f4f4',
+    backgroundColor: 'black',
     padding: '20px',
     textAlign: 'center',
     borderTop: '1px solid #ddd',
@@ -11,7 +11,7 @@ function Footer () {
   };
 
   const linkStyle = {
-    color: '#333',
+    color: '#fff',
     textDecoration: 'none',
     margin: '0 10px',
   };
@@ -31,7 +31,7 @@ function Footer () {
 
   return (
     <div style={footerStyle}>
-      <p>&copy; 2024 Your E-Commerce Store</p>
+      <p className='text-white'>&copy; 2024 Your E-Commerce Store</p>
       <div>
         <a href="#" style={linkStyle} className='footerLink'>
           Home

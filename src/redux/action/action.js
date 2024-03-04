@@ -11,7 +11,6 @@ export const fetchProduct = () => async(dispatch) => {
       }
 };
 
-
 export const addToCart = (product) => ({
   type: 'ADD_TO_CART',
   payload:{

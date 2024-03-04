@@ -1,16 +1,22 @@
 
-
-.Cartstyle{
+.navbar-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.CartCountstyle{
     position:absolute;
     right:5%;
-    top:10%;
+    top:15%;
     background:red;
     border-radius:50%;
-    width:20px;
-    height:20px;
-    font-size:14px;
+    width:18px;
+    height:18px;
+    font-size:13px;
+    font-weight: 600;
     color:white;
-    padding-left:6px;
+    padding:0 0 6px 6px !important;
     cursor:pointer;
 }
 .headerCartIcon{
@@ -34,6 +40,13 @@
 }
 .HeaderNavItem:hover{
     color: rgb(211, 153, 153) !important;
+}
+.form-switch .form-check-input{
+    width: 3em !important;
+}
+.form-check-input{
+    height: 1.5em !important;
+    border: 2px solid rgb(214, 214, 214) !important;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 425px) {
