@@ -115,63 +115,63 @@ function Home() {
                 <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Health & Beauty</a>
               </div>
             </div>
-            <div id="carouselExampleCaptions" class="carousel col-md-8 col-12 slide pt-lg-4">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <div id="carouselExampleCaptions" className="carousel col-md-8 col-12 slide pt-lg-4">
+              <div className="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src={CaroselImg1} class="d-block w-100" alt="..."/>
-                  <div class="carousel-caption d-none d-md-block " style={{margin:"0 400px 100px 0 ", padding:"0"}}>
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src={CaroselImg1} className="d-block w-100" alt="..."/>
+                  <div className="carousel-caption d-none d-md-block " style={{margin:"0 400px 100px 0 ", padding:"0"}}>
                     <h5 style={{fontSize:"25px"}}><span><img src={CaroselImg2} style={{width:"30px"}} className='me-2 mb-2 text-start' /></span>iPhone 14 Series <br/>Up to 10% off Voucher</h5>
                     <a href='' className='text-white' style={{fontSize:"25px", textDecoration:"none"}}>
                       Shop Now
                       <span className='ms-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
+                          <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                         </svg>
                       </span>
                     </a>
                   </div>
                 </div>
-                <div class="carousel-item">
-                  <img src={CaroselImg1} class="d-block w-100" alt="..."/>
-                  <div class="carousel-caption d-none d-md-block " style={{margin:"0 400px 100px 0 ", padding:"0"}}>
+                <div className="carousel-item">
+                  <img src={CaroselImg1} className="d-block w-100" alt="..."/>
+                  <div className="carousel-caption d-none d-md-block " style={{margin:"0 400px 100px 0 ", padding:"0"}}>
                     <h5 style={{fontSize:"25px"}}><span><img src={CaroselImg2} style={{width:"30px"}} className='me-2 mb-2 text-start' /></span>iPhone 14 Series <br/>Up to 10% off Voucher</h5>
                     <a href='' className='text-white' style={{fontSize:"25px", textDecoration:"none"}}>
                       Shop Now
                       <span className='ms-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
+                          <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                         </svg>
                       </span>
                     </a>
                   </div>
                 </div>
-                <div class="carousel-item">
-                  <img src={CaroselImg1} class="d-block w-100" alt="..."/>
-                  <div class="carousel-caption d-none d-md-block " style={{margin:"0 400px 100px 0 ", padding:"0"}}>
+                <div className="carousel-item">
+                  <img src={CaroselImg1} className="d-block w-100" alt="..."/>
+                  <div className="carousel-caption d-none d-md-block " style={{margin:"0 400px 100px 0 ", padding:"0"}}>
                     <h5 style={{fontSize:"25px"}}><span><img src={CaroselImg2} style={{width:"30px"}} className='me-2 mb-2 text-start' /></span>iPhone 14 Series <br/>Up to 10% off Voucher</h5>
                     <a href='' className='text-white' style={{fontSize:"25px", textDecoration:"none"}}>
                       Shop Now
                       <span className='ms-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
+                          <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                         </svg>
                       </span>
                     </a>
                   </div>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
               </button>
             </div>
           </div>
