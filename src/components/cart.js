@@ -85,7 +85,7 @@ function Cart() {
                         className='homeCardText ps-3 pb-2 mt-2'
                         style={{ fontSize: '14px', fontWeight: '500' }}
                       >
-                        Rating: {item.rating.rate}
+                        Rating: <span style={{color:"#fc530a"}}>{item.rating.rate}</span>
                       </p>
                     </div>
                     <div style={{display:"flex", flexDirection:"column", width:"50%"}}>

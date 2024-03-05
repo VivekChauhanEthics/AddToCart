@@ -41,7 +41,7 @@
 }
 
 .CardStyle{
-    width: 370px !important;
+    width: 100% !important;
     padding: 20px;
     border-radius:10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
@@ -100,6 +100,36 @@
     font-size: 16px;
     font-weight: 400;
     margin-top: 10px;
+}
+.owl-nav .owl-prev{
+    background-color: #DB4444 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+}
+.owl-nav .owl-next{
+    background-color: #DB4444 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+}
+.owl-nav .owl-prev:hover{
+    background-color: #dd2222 !important;
+}
+.owl-nav .owl-next:hover{
+    background-color: #dd2222 !important;
+}
+.owl-nav .owl-prev span{
+    color: #fff !important;
+    font-size: 30px !important;
+    font-weight: 600;
+    line-height: 20px;
+}
+.owl-nav .owl-next span{
+    color: #fff !important;
+    font-size: 30px !important;
+    font-weight: 600;
+    line-height: 20px;
 }
 
 

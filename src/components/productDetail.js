@@ -82,11 +82,10 @@ function ProductDetail() {
                             <div className='col-md-6 p-2 ms-lg-5 '>
                                 <div className=''>
                                     <p className=' p-1 m-0' style={{ fontSize: "20px", fontWeight: "600" }}> {currentItem.title}</p>
-                                    <p className=' pb-2 p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Rating:<span style={{color:"black", fontWeight:"600"}}> {currentItem.rating.rate} </span></p>
+                                    <p className=' pb-2 p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Rating:<span style={{color:"#fc530a", fontWeight:"600"}}> {currentItem.rating.rate} </span></p>
                                     <p className=' p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Price: <span className='text-success'>{currentItem.price}</span></p>
-                                    <p className=' p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>{currentItem.category}</p>
+                                    <p className=' p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Category: <span style={{color:"#908e91"}}>{currentItem.category}</span></p>
                                     <p className=' p-1 m-0' style={DiscriptionStyle}><span style={{ fontSize: "15px", fontWeight: "600" }}>Description:</span> {currentItem.description}</p>
-                                    
                                 </div>
                                 <div className='my-3' style={{ display:"flex", gap:"10px", alignItems:"center"}}>
                                     <span style={{fontSize:"16px", fontWeight:"600"}} className='ms-1'>Size :  </span>
@@ -129,9 +128,9 @@ function ProductDetail() {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div className='ps-5 container' style={{display:"flex", alignItems:"center"}}><span style={{width:"15px", height:"30px", background:"#DB4444", borderRadius:"3px", margin:"40px 0 0 20px"}}></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Related Item</h4></div>
-                    <div className="container" style={{ overflow: 'hidden', overflowY: 'hidden' }}>
+                <div className='ps-5'>
+                    <div className='container ps-lg-5' style={{display:"flex", alignItems:"center"}}><span style={{width:"15px", height:"30px", background:"#DB4444", borderRadius:"3px", margin:"40px 0 0 20px"}}></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Related Item</h4></div>
+                    <div className="container ps-lg-5" style={{ overflow: 'hidden', overflowY: 'hidden' }}>
                         <div className="d-flex gap-4 py-5">
                             {relatedProducts.map((item) => (
                             <div className='CardStyle' key={item.id}>
@@ -143,13 +142,13 @@ function ProductDetail() {
                                     {item.title}
                                 </p>
                                 <p className="text-center p-0 m-0 homeCardText" style={CategoryclampStyle}>
-                                    {item.category}
+                                <span style={{color:"#908e91"}}>{item.category}</span>
                                 </p>
                                 <p className="text-center p-0 m-0 homeCardText" style={{ fontSize: '15px', fontWeight: '600' }}>
                                     Price: <span className="text-success">{item.price}</span>
                                 </p>
                                 <p className="text-center pb-2 m-0 homeCardText" style={{ fontSize: '15px', fontWeight: '400' }}>
-                                    Rating: {item.rating.rate}
+                                    Rating: <span style={{color:"#fc530a", fontWeight:"600"}}>{item.rating.rate}</span>
                                 </p>
                                 </div>
                                 <div className="text-center ">
