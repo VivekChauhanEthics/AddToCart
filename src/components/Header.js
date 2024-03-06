@@ -14,7 +14,7 @@ function Header({ onLogout, toggleTheme  }){
             <div className="container">
                 <Link to="/" className="navbar-brand">
                     <img src={LogoImg} alt='' className='img-fluid Logo'/>
-                    <h1>Exclusive</h1>
+                    <h1 className='pt-2'>Exclusive</h1>
                 </Link>
                 <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div className="offcanvas-header">

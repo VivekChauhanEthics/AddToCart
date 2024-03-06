@@ -9,6 +9,7 @@
     height:20 !important;
     color:black;
 }
+
 .navbar-toggler:focus {
     box-shadow: none;
 }
