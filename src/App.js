@@ -14,9 +14,9 @@ function App() {
 
   return (
     <>
-      <div className='Container-fluid' style={{height:"38px",background:"#000000"}}>
+      <div className='Container-fluid topTextBar'>
         <div className='container'>
-           <p className='text-white text-center' style={{fontSize:"14px", lineHeight:"38px"}}>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a href='' className='text-white ms-2'>ShopNow</a></p>
+           <p className='text-white text-center'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a href='' className='text-white ms-2'>ShopNow</a></p>
         </div>
       </div>
       <BrowserRouter >
