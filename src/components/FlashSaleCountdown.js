@@ -34,20 +34,20 @@ const FlashSaleCountdown = () => {
 
   return (
     <ul className='list-unstyled d-flex gap-3 HomePgTime'>
-        <li>
-            <p>Hours</p>
-            <span>{Math.floor((remainingTime % 86400) / 3600)}</span>
-        </li>
-        <li className='dots'>:</li>
-        <li>
-            <p>Minutes</p>
-            <span>{Math.floor((remainingTime % 3600) / 60)}</span>
-        </li>
-        <li className='dots'>:</li>
-        <li>
-            <p>Seconds</p>
-            <span>{remainingTime % 60}</span>
-    </li>
+      <li>
+          <p>Hours</p>
+          <span>{Math.floor((remainingTime % 86400) / 3600)}</span>
+      </li>
+      <li className='dots'>:</li>
+      <li>
+          <p>Minutes</p>
+          <span>{Math.floor((remainingTime % 3600) / 60)}</span>
+      </li>
+      <li className='dots'>:</li>
+      <li>
+          <p>Seconds</p>
+          <span>{remainingTime % 60}</span>
+      </li>
     </ul>
   );
 };

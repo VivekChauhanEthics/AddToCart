@@ -100,8 +100,8 @@ function Contact() {
       <>
         <Header toggleTheme={toggleTheme}/>
         <div className='container-fluid ps-0 pe-0'>
-          <div className='container d-flex pt-5'>
-            <div className='col-lg-4 pe-5'>
+          <div className='container pt-5 d-lg-flex'>
+            <div className='col-lg-4 col-12 pe-5'>
               <div>
                 <div className='d-flex'>
                  <span style={{background:"#DB4444", borderRadius:"50%" , padding:"2px 8px"}}>
@@ -128,10 +128,10 @@ function Contact() {
                 <p style={{fontWeight:"500"}}>Emails: customer@exclusive.com</p>
               </div>
             </div>
-            <div className='col-lg-8 mb-5 pb-5'>
+            <div className='col-lg-8 col-12 mb-5 pb-5 mt-5 mt-lg-0'>
               <form className='contact-form' onSubmit={handleSubmit}>
-                <div className='d-flex gap-5'>
-                  <div className='me-auto w-50'>
+                <div className='d-lg-flex gap-lg-5'>
+                  <div className='me-auto w-100 w-lg-50'>
                     <label htmlFor='name'>Name*:</label>
                     <input
                       type='text'
@@ -145,7 +145,7 @@ function Contact() {
                     />
                     {errors.name && <div className='error-message m-0 text-danger ps-2' style={{fontSize:"14px"}}>{errors.name}</div>}
                   </div>
-                  <div className='w-50'>
+                  <div className='w-100 w-lg-50 mt-2 mt-lg-0'>
                     <label htmlFor='phone'>Phone*:</label>
                     <input
                       type='text'
@@ -187,7 +187,7 @@ function Contact() {
                 ></textarea>
                 {errors.message && <div className='error-message m-0 ps-2 text-danger' style={{fontSize:"14px"}}>{errors.message}</div>}
     
-                <button type='submit' className='btn bg-danger'>Send Message</button>
+                <button type='submit' className='btn bg-danger mt-4'>Send Message</button>
               </form>
             </div>
           </div>

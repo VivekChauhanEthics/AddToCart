@@ -1,3 +1,58 @@
+
+.theme-light {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* carosel css */
+.carousel{
+    margin:10px 0 0 60px;
+}
+.HomeCaroselImg{
+    height: 600px;
+}
+.theme-dark {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+.carousel-caption{
+    margin:0 300px 100px 0; 
+    padding:0;
+}
+.carousel-caption h5{
+    font-size:30px;
+}
+.carousel-caption img{
+    width:30px;
+}
+.carousel-caption a{
+    font-size:25px;
+    text-decoration:none;
+}
+
+/* search container */
+.searchCont{
+    display:flex;
+    flex-direction:row; 
+    justify-content:space-between;
+    align-items:center;
+}
+.searchCont span{
+    width:15px;
+    height:30px;
+    background:#DB4444;
+    border-radius:3px;
+    margin:40px 0 0 20px;
+}
+.searchInputCont{
+    border:1px solid #D6D5D5 ;
+    width:30%;
+    padding:5px 10px;
+    background:#e6e1e1;
+    border-radius:5px;
+}
+
+/* flash sale time css */
 .HomePgTime li{
     display: flex;
     flex-direction: column;
@@ -23,15 +78,17 @@
   font-size: 25px;
   font-weight: 600;
 }
-.HomeCaroselImg{
-    height: 600px;
-}
 
+/* banner */
 .HomeBannerImg{
     width:100%;
     height:500px;
 }
+/* card css */
 .HomeCardImg {
+    width:140px;
+    height: 120px;
+    cursor: pointer;
     transition: transform 0.3s ease-out;
 }
 .HomeCardImg:hover {
@@ -40,7 +97,6 @@
 .homeCardText{
     font-size: 14px !important;
 }
-
 .CardStyle{
     width: 100% !important;
     padding: 20px;
@@ -51,7 +107,6 @@
     flex-direction: column;
     background-color: #fdf0f0;
 }
-
 .AddToCartBtn{
     width: 100%;
     border: 1px solid ;
@@ -67,48 +122,7 @@
     color: #fff !important;
 }
 
-.theme-light {
-    background-color: #fff !important;
-    color: #000 !important;
-}
-.carousel{
-    margin:10px 0 0 60px;
-}
-.theme-dark {
-    background-color: #000 !important;
-    color: #fff !important;
-}
-.carousel-caption{
-    margin:0 300px 100px 0; 
-    padding:0;
-}
-.carousel-caption h5{
-    font-size:30px;
-}
-.carousel-caption img{
-    width:30px;
-}
-.carousel-caption a{
-    font-size:25px;
-    text-decoration:none;
-}
-.homeLastCont div{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding: 20px 20px;
-    border-radius: 5px;
-}
-.homeLastCont span{
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 10px;
-}
-.homeLastCont p{
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 10px;
-}
+/* Home page sliders css */
 .owl-nav .owl-prev{
     background-color: #DB4444 !important;
     width: 40px !important;
@@ -140,6 +154,32 @@
     line-height: 20px;
 }
 
+/* this month container css */
+.thisMonthCont span{
+    width:15px;
+    height:30px;
+    background:#DB4444;
+    border-radius:3px;
+    margin:40px 0 0 20px;
+}
+/* home page last container css */
+.homeLastCont div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding: 20px 20px;
+    border-radius: 5px;
+}
+.homeLastCont span{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.homeLastCont p{
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 425px) {
     .HomeCaroselImg{
@@ -183,6 +223,141 @@
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
         color: #fff;
+        text-align: center;
+    }
+
+    /* search container */
+    .searchCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:40px 0 0 0px;
+    }
+    .searchInputCont{
+        border:1px solid #D6D5D5 ;
+        width:70%;
+        padding:0px 10px;
+        background:#e6e1e1;
+        border-radius:5px;
+        height: 28px;
+        margin-bottom: 6px;
+    }
+    .searchInputCont input::placeholder{
+        font-size: 14px;
+    }
+    .searchCont h4{
+        font-size: 18px;
+    }
+
+    /* flash sale time css */
+    .HomePgTime .dots{
+        font-size: 20px;
+        padding-top: 40px;
+        color:#DB4444;
+    }
+    .HomePgTime p{
+        padding: 0;
+        margin: 0;
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .HomePgTime span{
+        height: 5px;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .flashSaleCont h2{
+        font-size: 23px;
+        margin-bottom: 30px;
+        line-height: 20px;
+    }
+    .flashSaleCont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    /* card css */
+    .HomeCardImg {
+        width:100% !important;
+        height: 100px;
+    }
+    .homeCardText{
+        font-size: 14px !important;
+    }
+    .CardStyle{
+        width: 100% !important;
+        padding: 15px 10px;
+        height: auto !important;
+    }
+    .AddToCartBtn{
+        width: 100%;
+        padding: 2px 10px;
+        font-size: 14px !important;
+    }
+
+    /* Home page sliders css */
+    .owl-nav .owl-prev{
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .owl-nav .owl-next{
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .owl-nav .owl-prev span{
+        font-size: 25px !important;
+        line-height: 20px;
+    }
+    .owl-nav .owl-next span{
+        font-size: 25px !important;
+        line-height: 20px;
+    }
+    /* this month container css */
+    .thisMonthCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:0px;
+    }
+    .thisMonthCont h4{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .thisMonthBtnCont h2{
+        font-size: 23px;
+    }
+    .thisMonthBtnCont button{
+       height: 30px;
+       line-height: 0px;
+       font-size: 13px;
+    }
+    /* banner */
+    .HomeBannerImg{
+        width:100%;
+        height:auto;
+    }
+    /* home page last container css */
+    .homeLastCont div{
+        padding: 20px 20px;
+    }
+    .homeLastCont span{
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 15px;
+    }
+    .homeLastCont p{
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 0px;
+        padding: 0 20%;
         text-align: center;
     }
 }
@@ -230,6 +405,141 @@
         color: #fff;
         text-align: center;
     }
+
+    /* search container */
+    .searchCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:40px 0 0 0px;
+    }
+    .searchInputCont{
+        border:1px solid #D6D5D5 ;
+        width:70%;
+        padding:0px 10px;
+        background:#e6e1e1;
+        border-radius:5px;
+        height: 28px;
+        margin-bottom: 6px;
+    }
+    .searchInputCont input::placeholder{
+        font-size: 14px;
+    }
+    .searchCont h4{
+        font-size: 18px;
+    }
+
+    /* flash sale time css */
+    .HomePgTime .dots{
+        font-size: 20px;
+        padding-top: 40px;
+        color:#DB4444;
+    }
+    .HomePgTime p{
+        padding: 0;
+        margin: 0;
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .HomePgTime span{
+        height: 5px;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .flashSaleCont h2{
+        font-size: 23px;
+        margin-bottom: 30px;
+        line-height: 20px;
+    }
+    .flashSaleCont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    /* card css */
+    .HomeCardImg {
+        width:100% !important;
+        height: 100px;
+    }
+    .homeCardText{
+        font-size: 14px !important;
+    }
+    .CardStyle{
+        width: 100% !important;
+        padding: 15px 10px;
+        height: auto !important;
+    }
+    .AddToCartBtn{
+        width: 100%;
+        padding: 2px 10px;
+        font-size: 14px !important;
+    }
+
+    /* Home page sliders css */
+    .owl-nav .owl-prev{
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .owl-nav .owl-next{
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .owl-nav .owl-prev span{
+        font-size: 25px !important;
+        line-height: 20px;
+    }
+    .owl-nav .owl-next span{
+        font-size: 25px !important;
+        line-height: 20px;
+    }
+    /* this month container css */
+    .thisMonthCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:0px;
+    }
+    .thisMonthCont h4{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .thisMonthBtnCont h2{
+        font-size: 23px;
+    }
+    .thisMonthBtnCont button{
+       height: 30px;
+       line-height: 0px;
+       font-size: 13px;
+    }
+    /* banner */
+    .HomeBannerImg{
+        width:100%;
+        height:auto;
+    }
+    /* home page last container css */
+    .homeLastCont div{
+        padding: 20px 20px;
+    }
+    .homeLastCont span{
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 15px;
+    }
+    .homeLastCont p{
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 0px;
+        padding: 0 20%;
+        text-align: center;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .HomeCaroselImg{
@@ -250,7 +560,6 @@
     .carousel-indicators {
         bottom: -5px;
     }
-
     .carousel-caption h5{
         font-size:22px;
     }
@@ -275,7 +584,6 @@
         color: #fff;
         text-align: center;
     }
-
     .caroselRow{
         justify-content: center;
     }
@@ -283,7 +591,324 @@
         width: 100%;
         padding: 0;
     }
+
+    /* search container */
+    .searchCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:40px 0 0 0px;
+    }
+    .searchInputCont{
+        border:1px solid #D6D5D5 ;
+        width:70%;
+        padding:0px 10px;
+        background:#e6e1e1;
+        border-radius:5px;
+        height: 28px;
+        margin-bottom: 6px;
+    }
+    .searchInputCont input::placeholder{
+        font-size: 14px;
+    }
+    .searchCont h4{
+        font-size: 18px;
+    }
+
+    /* flash sale time css */
+    .HomePgTime .dots{
+        font-size: 20px;
+        padding-top: 40px;
+        color:#DB4444;
+    }
+    .HomePgTime p{
+        padding: 0;
+        margin: 0;
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .HomePgTime span{
+        height: 5px;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .flashSaleCont h2{
+        font-size: 23px;
+        margin-bottom: 30px;
+        line-height: 20px;
+    }
+    .flashSaleCont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    /* card css */
+    .HomeCardImg {
+        width:100% !important;
+        height: 100px;
+    }
+    .homeCardText{
+        font-size: 14px !important;
+    }
+    .CardStyle{
+        width: 100% !important;
+        padding: 15px 10px;
+        height: auto !important;
+    }
+    .AddToCartBtn{
+        width: 100%;
+        padding: 2px 10px;
+        font-size: 14px !important;
+    }
+
+    /* Home page sliders css */
+    .owl-nav .owl-prev{
+        width: 35px !important;
+        height: 35px !important;
+    }
+    .owl-nav .owl-next{
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .owl-nav .owl-prev span{
+        font-size: 27px !important;
+        line-height: 20px;
+    }
+    .owl-nav .owl-next span{
+        font-size: 27px !important;
+        line-height: 20px;
+    }
+    /* this month container css */
+    .thisMonthCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:0px;
+    }
+    .thisMonthCont h4{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .thisMonthBtnCont h2{
+        font-size: 23px;
+    }
+    .thisMonthBtnCont button{
+       height: 30px;
+       line-height: 0px;
+       font-size: 13px;
+    }
+    /* banner */
+    .HomeBannerImg{
+        width:100%;
+        height:auto;
+    }
+    /* home page last container css */
+    .homeLastCont div{
+        padding: 10px 10px;
+    }
+    .homeLastCont span{
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 15px;
+    }
+    .homeLastCont p{
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 0px;
+        padding:0;
+        text-align: center;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .HomeCaroselImg{
+        height: 200px;
+    }
+    .HomeBannerImg{
+        width:100%;
+        height:200px;
+    }
+    .carousel{
+        margin:10px 0 0 20px !important;
+    }
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        display: inline-block;
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+    .carousel-indicators {
+        bottom: -5px;
+    }
+    .carousel-caption h5{
+        font-size:22px;
+    }
+    .carousel-caption img{
+        width:40px;
+    }
+    .carousel-caption a{
+        font-size:20px;
+        text-decoration:none;
+    }
+    .carousel-caption{
+        margin:0; 
+        padding:0;
+    }
+    .carousel-caption {
+        position: absolute;
+        right: 40%;
+        bottom:4rem;
+        left: 0;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        color: #fff;
+        text-align: center;
+    }
+    .caroselRow{
+        justify-content: center;
+    }
+    .caroselRow .carousel {
+        width: 70%;
+    }
 
+    /* search container */
+    .searchCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:40px 0 0 0px;
+    }
+    .searchInputCont{
+        border:1px solid #D6D5D5 ;
+        width:40%;
+        padding:0px 10px;
+        background:#e6e1e1;
+        border-radius:5px;
+        height: 28px;
+        margin-bottom: 6px;
+    }
+    .searchInputCont input::placeholder{
+        font-size: 14px;
+    }
+    .searchCont h4{
+        font-size: 18px;
+    }
+
+    /* flash sale time css */
+    .HomePgTime .dots{
+        font-size: 20px;
+        padding-top: 40px;
+        color:#DB4444;
+    }
+    .HomePgTime p{
+        padding: 0;
+        margin: 0;
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .HomePgTime span{
+        height: 5px;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .flashSaleCont h2{
+        font-size: 23px;
+        margin-bottom: 30px;
+        line-height: 20px;
+    }
+    .flashSaleCont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    /* card css */
+    .HomeCardImg {
+        width:100% !important;
+        height: 100px;
+    }
+    .homeCardText{
+        font-size: 14px !important;
+    }
+    .CardStyle{
+        width: 100% !important;
+        padding: 15px 10px;
+        height: auto !important;
+    }
+    .AddToCartBtn{
+        width: 100%;
+        padding: 2px 10px;
+        font-size: 14px !important;
+    }
+
+    /* Home page sliders css */
+    .owl-nav .owl-prev{
+        width: 35px !important;
+        height: 35px !important;
+    }
+    .owl-nav .owl-next{
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .owl-nav .owl-prev span{
+        font-size: 27px !important;
+        line-height: 20px;
+    }
+    .owl-nav .owl-next span{
+        font-size: 27px !important;
+        line-height: 20px;
+    }
+    /* this month container css */
+    .thisMonthCont span{
+        width:12px;
+        height:27px;
+        background:#DB4444;
+        border-radius:3px;
+        margin:40px 0 0 0;
+    }
+    .thisMonthCont h4{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .thisMonthBtnCont h2{
+        font-size: 23px;
+    }
+    .thisMonthBtnCont button{
+       height: 30px;
+       line-height: 0px;
+       font-size: 13px;
+    }
+    /* banner */
+    .HomeBannerImg{
+        width:100%;
+        height:auto;
+    }
+    /* home page last container css */
+    .homeLastCont div{
+        padding: 10px 10px;
+    }
+    .homeLastCont span{
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 15px;
+    }
+    .homeLastCont p{
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 0px;
+        padding:0;
+        text-align: center;
+    }
 }

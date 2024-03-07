@@ -101,9 +101,9 @@ function Home() {
         <>
           <Header onLogout={handleLogout} toggleTheme={toggleTheme}/>
           {/* carosel content */}
-          <div className='d-md-flex container-fluid p-0 '>
+          <div className='d-md-flex container-fluid p-0'>
             <div className='container p-0'>
-              <div className='row caroselRow'>
+              <div className='row caroselRow p-0 m-0'>
                 <div className='col-md-3 col-12 d-none d-lg-block' style={{borderRight:"1px solid #D6D5D5"}}>
                   <div className='container d-flex flex-column gap-2' style={{padding:"50px 0 0 60px"}}>
                     <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Woman's Fashion </a>
@@ -117,7 +117,7 @@ function Home() {
                     <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Health & Beauty</a>
                   </div>
                 </div>
-                <div id="carouselExampleCaptions" className="carousel col-md-8 col-12 slide pt-lg-4">
+                <div id="carouselExampleCaptions" className="carousel col-md-8 col-12 slide pt-lg-4 p-0">
                   <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -180,12 +180,12 @@ function Home() {
             </div>
           </div>
           {/* flash sale content */}
-          <div className="container-fluid pt-5">
+          <div className="container-fluid pt-lg-5 p-0">
             <div className='container'>
               <div className='row'>
-                <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"center"}}>
-                  <div className='ps-5' style={{display:"flex", alignItems:"center"}}><span style={{width:"15px", height:"30px", background:"#DB4444", borderRadius:"3px", margin:"40px 0 0 20px"}}></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Todays</h4></div>
-                  <div className="d-flex justify-content-center me-5 mt-5" style={{border:"1px solid #D6D5D5 ", width:"30%", padding:"5px 10px", background:"#e6e1e1", borderRadius:"5px"}}>
+                <div className='searchCont'>
+                  <div className='ps-lg-5' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Todays</h4></div>
+                  <div className="d-flex justify-content-center searchInputCont me-lg-5 mt-5">
                     <input
                       type="text"
                       placeholder="What are you looking for?"
@@ -200,15 +200,15 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div className='ps-5 d-flex'>
-                  <h2 className='mt-5 ms-3' style={{ color: 'black' }}>Flash Sales</h2>
-                  <div className='ms-5 d-flex'>
+                <div className='ps-lg-5 d-flex flashSaleCont'>
+                  <h2 className='mt-5 ms-lg-3' style={{ color: 'black' }}>Flash Sales</h2>
+                  <div className='ms-lg-5 d-flex'>
                     <FlashSaleCountdown/>
                   </div>
                 </div>
-                <div className="container" style={{width:"100%", height:"400px"}}>
+                <div className="container">
                   <OwlCarousel 
-                      className="owl-carousel owl-theme py-4"
+                      className="owl-carousel owl-theme py-lg-4"
                       loop={true}
                       margin={20}
                       nav={true}
@@ -223,15 +223,18 @@ function Home() {
                           items: 4,
                         },
                         1000: {
+                          items: 5,
+                        },
+                        1400: {
                           items: 6,
                         },
                       }}
                     >
                     {FlashSale.map((item) => (
-                      <div className='item CardStyle my-4'  key={item.id}>
+                      <div className='item CardStyle my-lg-4 mb-4'  key={item.id}>
                         <Link to="/productDetail" onClick={() => handleProductDetail(item)}>
                           <div>
-                            <img className='HomeCardImg' src={item.image} style={{ width: '140px', height: '120px', cursor: 'pointer' }} alt={item.title} />
+                            <img className='HomeCardImg' src={item.image} alt={item.title} />
                           </div>
                         </Link>
                         <div className="mt-2">
@@ -261,17 +264,17 @@ function Home() {
             </div>
           </div>
           {/* Best Selling Products */}
-          <div className='container-fluid'>
+          <div className='container-fluid p-0'>
             <div className='container'>
-              <div className='row'>
-                <div className='ps-5' style={{display:"flex", alignItems:"center"}}><span style={{width:"15px", height:"30px", background:"#DB4444", borderRadius:"3px", margin:"40px 0 0 20px"}}></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>This Month</h4></div>
-                <div className='ps-5 d-flex'>
-                  <h2 className='mt-0 ms-3 me-auto' style={{color:"black"}}>Best Selling Products</h2>
-                  <button className='btn bg-danger text-white me-5 px-5'>View All</button>
+              <div className='row mt-4 mt-lg-0'>
+                <div className='ps-lg-5 thisMonthCont' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-lg-5  ms-2' style={{color:"#DB4444"}}>This Month</h4></div>
+                <div className='ps-lg-5 d-flex thisMonthBtnCont'>
+                  <h2 className='mt-lg-0 mt-1 ms-lg-3 me-auto' style={{color:"black"}}>Best Selling Products</h2>
+                  <button className='btn bg-danger text-white me-lg-5 px-lg-5 px-3'>View All</button>
                 </div>
                 <div className="container">
                   <OwlCarousel 
-                        className="owl-carousel owl-theme py-4"
+                        className="owl-carousel owl-theme py-lg-4"
                         loop={true}
                         margin={20}
                         nav={true}
@@ -286,6 +289,9 @@ function Home() {
                             items: 4,
                           },
                           1000: {
+                            items: 5,
+                          },
+                          1400: {
                             items: 6,
                           },
                         }}
@@ -324,77 +330,80 @@ function Home() {
             </div>
           </div>
           {/* banner content */}
-          <div className='container-fluid mt-3 mt-lg-5'>
-            <div className='container'>
+          <div className='container-fluid  my-5 p-0'>
+            <div className='container p-0'>
               <img src={BannerImg1} alt='..' className='img-fluid HomeBannerImg'/>
             </div>
           </div>
           {/* Explore Our Products */}
-          <div className='container-fluid'>
+          <div className='container-fluid p-0'>
             <div className='container'>
-              <div className='row'>
-              <div className='ps-5' style={{display:"flex", alignItems:"center"}}><span style={{width:"15px", height:"30px", background:"#DB4444", borderRadius:"3px", margin:"40px 0 0 20px"}}></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Our Products</h4></div>
-              <div className='ps-5 d-flex'>
-                <h2 className='mt-5 ms-3' style={{ color: 'black' }}>Explore Our Products</h2>
-              </div>
-              <div className="container">
-                <OwlCarousel 
-                    className="owl-carousel owl-theme py-4"
-                    loop={true}
-                    margin={20}
-                    nav={true}
-                    autoplay={true}
-                    autoplayTimeout={3000}
-                    dots={false}
-                    responsive={{
-                      0: {
-                        items: 2,
-                      },
-                      768: {
-                        items: 4,
-                      },
-                      1000: {
-                        items: 6,
-                      },
-                    }}
-                  >
-                  {filteredProducts.map((item) => (
-                    <div className='item CardStyle my-4'  key={item.id}>
-                      <Link to="/productDetail" onClick={() => handleProductDetail(item)}>
-                        <div>
-                          <img className='HomeCardImg' src={item.image} style={{ width: '140px', height: '120px', cursor: 'pointer' }} alt={item.title} />
+              <div className='row mt-4 mt-lg-0'>
+                <div className='ps-lg-5 thisMonthCont' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-lg-5  ms-2' style={{color:"#DB4444"}}>Our Products</h4></div>
+                <div className='ps-lg-5 d-flex thisMonthBtnCont'>
+                  <h2 className='mt-lg-0 mt-1 ms-lg-3 me-auto' style={{color:"black"}}>Explore Our Products</h2>
+                </div>
+                <div className="container">
+                  <OwlCarousel 
+                        className="owl-carousel owl-theme py-lg-4"
+                        loop={true}
+                        margin={20}
+                        nav={true}
+                        autoplay={true}
+                        autoplayTimeout={3000}
+                        dots={false}
+                        responsive={{
+                          0: {
+                            items: 2,
+                          },
+                          768: {
+                            items: 4,
+                          },
+                          1000: {
+                            items: 5,
+                          },
+                          1400: {
+                            items: 6,
+                          },
+                        }}
+                      >
+                      {filteredProducts.map((item) => (
+                        <div className='item CardStyle my-4'  key={item.id}>
+                          <Link to="/productDetail" onClick={() => handleProductDetail(item)}>
+                            <div>
+                              <img className='HomeCardImg' src={item.image} style={{ width: '140px', height: '120px', cursor: 'pointer' }} alt={item.title} />
+                            </div>
+                          </Link>
+                          <div className="mt-2">
+                            <p className="text-center p-0 m-0 " style={clampStyle}>
+                              {item.title}
+                            </p>
+                            <p className="text-center p-0 m-0 homeCardText" style={CategoryclampStyle}>
+                              {item.category}
+                            </p>
+                            <p className="text-center p-0 m-0 homeCardText text-dark" style={{ fontSize: '15px', fontWeight: '600' }}>
+                              Price: <span className="text-success"> ₹{item.price}</span>
+                            </p>
+                            <p className="text-center pb-2 m-0 homeCardText text-dark" style={{ fontSize: '15px', fontWeight: '400' }}>
+                              Rating: <span style={{color:"#fc530a"}}>{item.rating.rate}</span>
+                            </p>
+                          </div>
+                          <div className="text-center ">
+                            <button className='AddToCartBtn' size="small" style={{ fontSize: '15px' }} onClick={() => handleAddToCart(item)}>
+                              Add To Cart
+                            </button>
+                          </div>
                         </div>
-                      </Link>
-                      <div className="mt-2">
-                        <p className="text-center p-0 m-0 " style={clampStyle}>
-                          {item.title}
-                        </p>
-                        <p className="text-center p-0 m-0 homeCardText" style={CategoryclampStyle}>
-                          {item.category}
-                        </p>
-                        <p className="text-center p-0 m-0 homeCardText text-dark" style={{ fontSize: '15px', fontWeight: '600' }}>
-                          Price: <span className="text-success"> ₹{item.price}</span>
-                        </p>
-                        <p className="text-center pb-2 m-0 homeCardText text-dark" style={{ fontSize: '15px', fontWeight: '400' }}>
-                          Rating: <span style={{color:"#fc530a"}}>{item.rating.rate}</span>
-                        </p>
-                      </div>
-                      <div className="text-center ">
-                        <button className='AddToCartBtn' size="small" style={{ fontSize: '15px' }} onClick={() => handleAddToCart(item)}>
-                          Add To Cart
-                        </button>
-                      </div>
-                    </div>
-                    ))}
-                </OwlCarousel>
-              </div>
+                        ))}
+                    </OwlCarousel>
+                </div>
               </div>
             </div>
           </div>
           {/* last container */}
-          <div className='container-fluid'>
+          <div className='container-fluid p-0'>
             <div className='container'>
-              <div className='row py-3'>
+              <div className='row py-5'>
                 <div className='homeLastCont d-flex flex-column flex-md-row justify-content-center col-12'>
                   <div className='col-md-4 col-12 d-flex align-items-center justify-content-center'>
                     <img src={aboutLastContImg1} className='img-fluid' alt='..' />
@@ -415,7 +424,7 @@ function Home() {
               </div>
             </div>
           </div>
-        <Footer/>
+          <Footer/>
         </>
       ) : (
         <LoginForm onLogin={handleLogin} />
