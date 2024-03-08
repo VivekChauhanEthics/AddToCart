@@ -299,7 +299,7 @@ function Home() {
                       {bestSellingProducts.map((item) => (
                         <div className='item CardStyle my-4'  key={item.id}>
                           <Link to="/productDetail" onClick={() => handleProductDetail(item)}>
-                            <div>
+                            <div className='text-center ps-2'>
                               <img className='HomeCardImg' src={item.image} style={{ width: '140px', height: '120px', cursor: 'pointer' }} alt={item.title} />
                             </div>
                           </Link>
@@ -370,7 +370,7 @@ function Home() {
                       {filteredProducts.map((item) => (
                         <div className='item CardStyle my-4'  key={item.id}>
                           <Link to="/productDetail" onClick={() => handleProductDetail(item)}>
-                            <div>
+                            <div className='text-center ps-2'>
                               <img className='HomeCardImg' src={item.image} style={{ width: '140px', height: '120px', cursor: 'pointer' }} alt={item.title} />
                             </div>
                           </Link>
