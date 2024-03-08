@@ -17,14 +17,19 @@
 
 @media only screen and (min-width: 320px) and (max-width: 425px) {
     .loginCont{
-        margin:5% 0 0 0;
+        margin:0;
         display: flex;
         flex-direction: column;
     }
     .loginImage{
         width:100% !important;
-        height: 250px !important;
-        margin:25px 0 0 0;
+        height: auto !important;
+        margin:0;
+    }
+    .logindetails{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .loginInputs{
         margin-top: 30px;
@@ -34,22 +39,70 @@
 }
 @media only screen and (min-width: 426px) and (max-width: 767px) {
     .loginCont{
-        margin:11% 0 0 0;
+        margin:0;
         display: flex;
         flex-direction: column;
     }
     .loginImage{
         width:100% !important;
-        height: 250px !important;
-        margin:25px 0 0 0;
+        height: auto !important;
+        margin:0;
+    }
+    .logindetails{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .loginInputs{
         margin-top: 30px;
+        display: block;
+        justify-content:center ;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-
+    .loginCont{
+        margin:0;
+        display: flex;
+        flex-direction: column;
+    }
+    .loginImage{
+        width:100% !important;
+        height: auto !important;
+        margin:0;
+    }
+    .logindetails{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .loginInputs{
+        margin-top: 30px;
+        display: block;
+        justify-content:center ;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .loginCont{
+        margin:0;
+        display: flex;
+        flex-direction: row;
+        margin-right: 50px;
+    }
+    .loginImage{
+        width:100% !important;
+        height: auto !important;
+        margin:0;
+    }
+    .logindetails{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .loginInputs{
+        margin-top: 30px;
+        display: block;
+        justify-content:center ;
+    }
+    
 }

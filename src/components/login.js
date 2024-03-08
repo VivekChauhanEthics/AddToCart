@@ -179,7 +179,7 @@ function LoginForm({ onLogin }) {
                     </div>
                     ) : (
                       <>
-                        <p style={{fontWeight:"400", fontSize:"13px"}}><span style={{fontWeight:"600", fontSize:"14px"}}>ID:</span> ritik@gmail.com <span className='ms-3' style={{fontWeight:"600",fontSize:"14px"}}>Password:</span> Ritik@123</p>
+                        <p className='logindetails' style={{fontWeight:"400", fontSize:"13px"}}><span className='me-1' style={{fontWeight:"600", fontSize:"14px"}}>ID:</span> ritik@gmail.com <span className='ms-3 me-1' style={{fontWeight:"600",fontSize:"14px"}}>Password:</span> Ritik@123</p>
                         <div className='loginInputField'>
                           <div>
                             <label className='mt-4 ' type="text">Email</label><br/>

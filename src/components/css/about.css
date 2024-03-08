@@ -53,6 +53,10 @@
     border-radius: 5px;
     width: 30%;
 }
+.AboutImg{
+    width:350px;
+    height:350px;
+}
 .aboutLastCont span{
     font-size: 20px;
     font-weight: 700;
@@ -69,15 +73,96 @@
         width:100%;
         height:250px;
     }
+    .aboutSecondCont{
+        display:flex;
+        flex-direction:column;
+        gap:30px
+    }
+    .aboutSecondCont div{
+        display:flex;
+        width: 100%;
+    }
+    .aboutLastCont{
+        display:flex;
+        flex-direction:column;
+    }
+    .aboutLastCont div{
+        padding: 20px 5px;
+        width: 100%;
+    }
+    .aboutLastCont span{
+        font-size: 16px;
+    }
+    .aboutLastCont p{
+        font-size: 14px;
+    }
+
 }
 @media only screen and (min-width: 426px) and (max-width: 767px) {
     .aboutImage2{
         width:100%;
         height:250px;
     }
+    .aboutSecondCont{
+        display:flex;
+        flex-direction:column;
+        gap:30px
+    }
+    .aboutSecondCont div{
+        display:flex;
+        width: 100%;
+    }
+    .aboutLastCont{
+        display:flex;
+        flex-direction:column;
+    }
+    .aboutLastCont div{
+        padding: 20px 5px;
+        width: 100%;
+    }
+    .aboutLastCont span{
+        font-size: 16px;
+    }
+    .aboutLastCont p{
+        font-size: 14px;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-
+    .aboutImage2{
+        width:100%;
+        height:250px;
+    }
+    .aboutSecondCont{
+        display:flex;
+        flex-direction:column;
+        gap:30px
+    }
+    .aboutSecondCont div{
+        display:flex;
+        width: 100%;
+    }
+    .AboutImg{
+        width:350px;
+    }
+    .aboutLastCont{
+        display:flex;
+        flex-direction:column;
+    }
+    .aboutLastCont div{
+        padding: 20px 5px;
+        width: 100%;
+    }
+    .secondlastCont div{
+        width: auto;
+        height: 500px;
+        padding-top: 35px;
+    }
+    .aboutLastCont span{
+        font-size: 16px;
+    }
+    .aboutLastCont p{
+        font-size: 14px;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
 

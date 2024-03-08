@@ -105,7 +105,7 @@ function Home() {
             <div className='container p-0'>
               <div className='row caroselRow p-0 m-0'>
                 <div className='col-md-3 col-12 d-none d-lg-block' style={{borderRight:"1px solid #D6D5D5"}}>
-                  <div className='container d-flex flex-column gap-2' style={{padding:"50px 0 0 60px"}}>
+                  <div className='container d-flex flex-column gap-2 ms-lg-2' style={{padding:"20px 0 0 0"}}>
                     <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Woman's Fashion </a>
                     <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Men’s Fashion </a>
                     <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Electronics </a>
@@ -184,7 +184,7 @@ function Home() {
             <div className='container'>
               <div className='row'>
                 <div className='searchCont'>
-                  <div className='ps-lg-5' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Todays</h4></div>
+                  <div className='' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Todays</h4></div>
                   <div className="d-flex justify-content-center searchInputCont me-lg-5 mt-5">
                     <input
                       type="text"
@@ -200,8 +200,8 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div className='ps-lg-5 d-flex flashSaleCont'>
-                  <h2 className='mt-5 ms-lg-3' style={{ color: 'black' }}>Flash Sales</h2>
+                <div className='d-flex flashSaleCont'>
+                  <h2 className='mt-5 ms-lg-2' style={{ color: 'black' }}>Flash Sales</h2>
                   <div className='ms-lg-5 d-flex'>
                     <FlashSaleCountdown/>
                   </div>
@@ -267,8 +267,8 @@ function Home() {
           <div className='container-fluid p-0'>
             <div className='container'>
               <div className='row mt-4 mt-lg-0'>
-                <div className='ps-lg-5 thisMonthCont' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-lg-5  ms-2' style={{color:"#DB4444"}}>This Month</h4></div>
-                <div className='ps-lg-5 d-flex thisMonthBtnCont'>
+                <div className=' thisMonthCont' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-lg-5  ms-2' style={{color:"#DB4444"}}>This Month</h4></div>
+                <div className='d-flex thisMonthBtnCont'>
                   <h2 className='mt-lg-0 mt-1 ms-lg-3 me-auto' style={{color:"black"}}>Best Selling Products</h2>
                   <button className='btn bg-danger text-white me-lg-5 px-lg-5 px-3'>View All</button>
                 </div>
@@ -339,8 +339,8 @@ function Home() {
           <div className='container-fluid p-0'>
             <div className='container'>
               <div className='row mt-4 mt-lg-0'>
-                <div className='ps-lg-5 thisMonthCont' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-lg-5  ms-2' style={{color:"#DB4444"}}>Our Products</h4></div>
-                <div className='ps-lg-5 d-flex thisMonthBtnCont'>
+                <div className='thisMonthCont' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-lg-5  ms-2' style={{color:"#DB4444"}}>Our Products</h4></div>
+                <div className='d-flex thisMonthBtnCont'>
                   <h2 className='mt-lg-0 mt-1 ms-lg-3 me-auto' style={{color:"black"}}>Explore Our Products</h2>
                 </div>
                 <div className="container">
