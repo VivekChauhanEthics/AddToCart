@@ -1,12 +1,12 @@
 
-
 .ProductDetailCardStyle{
-    width: 100%;
-    padding: 20px;
+    
     border-radius: 10px;
-    height:auto;
-    display:flex;
-    margin-top:20px;
+}
+
+.productDetailImg{
+    width: 350px;
+    height: 500px;
 }
 .btn-check{
     border: 2px;
@@ -21,8 +21,8 @@
 }
 
 .theme-dark {
-background-color: #000 !important;
-color: #fff !important;
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 425px) {
@@ -32,6 +32,10 @@ color: #fff !important;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+    .productDetailImg{
+        width: 100%;
+        height: auto;
     }
     .productDetailCardCont{
         align-items: center;

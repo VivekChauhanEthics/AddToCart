@@ -7,7 +7,9 @@
 .cartLeftCont .container{
     padding:"0 0 0 130px"
 }
-
+.cartPgHeading{
+    margin-left: 150px;
+}
 .AmountCarTStyle{
     height: 500px !important;
     border-left: 1px solid #D6D5D5;
@@ -60,6 +62,9 @@
         display: flex;
         flex-direction: column;
     }
+    .cartPgHeading{
+        margin-left:10px;
+    }
     .cartLeftCont{
         width:100%;
         margin-left: 0 !important;
@@ -83,6 +88,9 @@
     .cartContainer{
         display: flex;
         flex-direction: column;
+    }
+    .cartPgHeading{
+        margin-left:10px;
     }
     .cartLeftCont{
         width:100%;
@@ -108,6 +116,9 @@
         display: flex;
         flex-direction: column;
     }
+    .cartPgHeading{
+        margin-left:20px;
+    }
     .cartLeftCont{
         width:100%;
         margin-left: 0 !important;
@@ -128,5 +139,56 @@
     }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
-
+    .cartContainer{
+        display: flex;
+        flex-direction: row;
+    }
+    .cartPgHeading{
+        margin-left:20px;
+    }
+    .cartLeftCont{
+        width:65%;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+    .cartLeftCont .container{
+        padding:0px;
+    }
+    .AmountCarTStyle{
+        height: 330px !important;
+        padding: 10px;
+        width: 30%;
+        margin-bottom: 30px;
+    }
+    .CarTStyle{
+        padding: 10px;
+        width: auto !important;
+    }
+}
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+    .cartContainer{
+        display: flex;
+        flex-direction: row;
+    }
+    .cartPgHeading{
+        margin-left:20px;
+    }
+    .cartLeftCont{
+        width:65%;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+    .cartLeftCont .container{
+        padding:0px;
+    }
+    .AmountCarTStyle{
+        height: 330px !important;
+        padding: 10px;
+        width: 30%;
+        margin-bottom: 30px;
+    }
+    .CarTStyle{
+        padding: 10px;
+        width: auto !important;
+    }
 }
