@@ -4,6 +4,7 @@ const initialState = {
     cart: [],
     productDetails: [],
     upDatedCart:[],
+    wishlist: [],
   };
   
   const productReducer = (state = initialState, action) => {
@@ -15,12 +16,10 @@ const initialState = {
         };
       case 'ADD_TO_CART':
         const existingProductIndex = state.cart.findIndex(item => item.id === action.payload.id);
-
         if (existingProductIndex !== -1) {
           // Product is already in the cart, update quantity
           const updatedCart = [...state.cart];
           updatedCart[existingProductIndex].quantity += 1;
-  
           return {
             ...state,
             cart: updatedCart,
@@ -52,6 +51,23 @@ const initialState = {
               : item
           ),
         };
+      case 'ADD_TO_WISHLIST':
+        const isProductInWishlist = state.wishlist.some((item) => item.id === action.payload.id);
+        if (!isProductInWishlist) {
+          return {
+            ...state,
+            wishlist: [...state.wishlist, action.payload],
+          };
+        } else {
+          return state; 
+        }
+        case 'REMOVE_FROM_WISHLIST':
+          console.log('Reducer - Removing from wishlist:', action.payload);
+          return {
+            ...state,
+            wishlist: state.wishlist.filter((item) => item.id !== action.payload),
+          };
+
       default:
         return state;
     }

@@ -1,12 +1,13 @@
 
 .ProductDetailCardStyle{
-    
     border-radius: 10px;
 }
-
 .productDetailImg{
     width: 350px;
     height: 500px;
+}
+.wishlistBtn{
+    border: 0;
 }
 .btn-check{
     border: 2px;

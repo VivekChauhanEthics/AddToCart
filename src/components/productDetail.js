@@ -1,9 +1,8 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./css/product.css";
 import {useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {  addToCart, productDetail } from '../redux/action/action';
+import {  addToCart, productDetail, addToWishlist } from '../redux/action/action';
 import Header from './Header';
 import Footer from './footer';
 
@@ -42,6 +41,21 @@ function ProductDetail() {
     const products = useSelector((state) => state.product.product);
     const product = useSelector((state) => state.product.productDetails);
 
+
+    const [wishlist] = useState(
+        JSON.parse(localStorage.getItem('wishlist')) || []
+    );
+    const [addtoWishList, setAddtoWishList] = useState(false);
+
+    const [wishlistState, setWishlistState] = useState({
+        isAdded: false,
+        imageSrc:"data:image/png;base64,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"
+    });
+    useEffect(() => {
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    }, [wishlist]);
+    
+
     console.log("product-detail", product);
 
     if (!product || product.length === 0) {
@@ -74,9 +88,22 @@ function ProductDetail() {
       };
     
     const relatedProducts = products.filter((item) =>
-    item.category.toLowerCase() === currentItem.category.toLowerCase() &&
-    item.id !== currentItem.id 
-);
+        item.category.toLowerCase() === item.category.toLowerCase() &&
+        item.id !== currentItem.id 
+    );
+
+    const handleAddToWishlist = (currentItem) => {
+        setAddtoWishList(!addtoWishList);
+        dispatch(addToWishlist(currentItem));
+        setWishlistState((prevState) => ({
+          ...prevState,
+          isAdded: !prevState.isAdded,
+          imageSrc: prevState.isAdded
+            ? "data:image/png;base64,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"
+            : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdklEQVR4nO2WvUoDQRSFJ9oogoI/iM+hRdRiyZ6zm32BgDaCbyC+QGy0VWMjASujdlY+gFgoYqFICDqzQYgpk94IupIQRUN2s8lmCtEPbrNc5tszc2FGiH/+LCqRWFDAsSLLCqgp8lkBh65tz7b2uuScInM/eskjBcyHFnqp1KAkM4r02pUE3iSw6QkRq5cktyT53ra3/h3Yqa/ZURwkbVk0I4G9ML0K2O4kjfv9fdRyLWsxSHyiQ9qsnK+4MRyaxBIoBYlftSUGav5ioKpxqytBiS80Jj4PSryu7YzJNV9xAZhQwIuO85WOMyWCkEBWQ+L9QOlXarLSx7TVB8OY7ChupCZX+yheCSX9RJEHkQcKyIpuKcXjwwq4ijDFl0+GMSR6oUiOKeC2B+l93rbHRRQKyeSMJPPdSIumOR1J+n3SJXATQnwdOWkrd5Y1IoHTAOmZdJxRoQNPiJgCNto8Fna9dHpA6OaRXG7e3WXXNJe0C//5lXwA64+yvErf+LAAAAAASUVORK5CYII="
+        }));
+    };
+      
 
     return (
         <>
@@ -113,6 +140,9 @@ function ProductDetail() {
                             <div className=' mt-3 p-1 d-flex gap-2'>
                                 <button size="small" style={{ fontSize: "15px", color: "white", background:"#DB4444" }} className='border-0 px-3 py-1'>Buy Now</button>
                                 <button size="small" style={{ fontSize: "15px", color: "white", background:"#000"  }} className='border-0 px-3 py-1' onClick={() => handleAddToCart(currentItem)}>Add To Card</button>
+                                <button className='Btn wishlistBtn' onClick={() => handleAddToWishlist(currentItem)}>
+                                 <img className='wishlistIcon' src={wishlistState.imageSrc} alt='imgWishlist' />
+                                </button>
                             </div>
                             <div>
                                 <div className='d-flex mt-3' style={{border:"1px solid #7D8184", padding:"10px 20px"}}>

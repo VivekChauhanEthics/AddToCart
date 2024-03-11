@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/home.css";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProduct, addToCart, productDetail } from '../redux/action/action';
+import { fetchProduct, addToCart, productDetail  } from '../redux/action/action';
 import Header from './Header';
 import Footer from './footer';
 import LoginForm from './login';
@@ -17,6 +17,7 @@ import aboutLastContImg1 from './images/about/S1.png';
 import aboutLastContImg2 from './images/about/S2.png';
 import aboutLastContImg3 from './images/about/S3.png';
 import FlashSaleCountdown from './FlashSaleCountdown';
+
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -231,9 +232,9 @@ function Home() {
                       }}
                     >
                     {FlashSale.map((item) => (
-                      <div className='item CardStyle my-lg-4 mb-4'  key={item.id}>
-                        <Link to="/productDetail" onClick={() => handleProductDetail(item)}>
-                          <div>
+                      <div className='item CardStyle my-lg-4 mb-4 wishlistIconCont'  key={item.id}>
+                        <Link className='' to="/productDetail" onClick={() => handleProductDetail(item)} style={{overflow:"hidden"}}>
+                          <div style={{overflow:"hidden"}}>
                             <img className='HomeCardImg' src={item.image} alt={item.title} />
                           </div>
                         </Link>

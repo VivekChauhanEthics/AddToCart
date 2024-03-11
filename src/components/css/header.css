@@ -1,3 +1,7 @@
+.hederMainContainer{
+    height:123px;
+}
+
 .navbar-brand{
     display: flex;
     justify-content: center;
@@ -59,6 +63,7 @@
     width:30px !important;
     height:25px !important;
 }
+
 .dropdown-toggle::after {
     display: none !important;
 }
@@ -82,6 +87,9 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 425px) {
+    .hederMainContainer{
+        height:100px;
+    }
     .navbar .container{
         display: flex;
         flex-wrap: unset;
@@ -141,6 +149,9 @@
     }
 }
 @media only screen and (min-width: 426px) and (max-width: 767px) {
+    .hederMainContainer{
+        height:100px;
+    }
     .navbar .container{
         display: flex;
         flex-wrap: unset;
@@ -200,6 +211,9 @@
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .hederMainContainer{
+        height:115px;
+    }
     .navbar .container{
         display: flex;
         flex-wrap: unset;
@@ -261,6 +275,9 @@
     }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .hederMainContainer{
+        height:120px;
+    }
     .navbar .container{
         display: flex;
         flex-wrap: unset;
@@ -322,6 +339,9 @@
     }
 }
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
+    .hederMainContainer{
+        height:123px;
+    }
     .navbar .container{
         display: flex;
         flex-wrap: unset;

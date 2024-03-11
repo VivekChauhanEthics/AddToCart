@@ -36,3 +36,16 @@ export const updateQuantity = (productId, newQuantity) => ({
     newQuantity,
   },
 });
+
+export const addToWishlist = (product) => ({
+  type: 'ADD_TO_WISHLIST',
+  payload: product,
+});
+
+export const removeFromWishlist = (productId) => {
+  console.log('Removing from wishlist:', productId);
+  return {
+    type: 'REMOVE_FROM_WISHLIST',
+    payload: productId,
+  };
+};

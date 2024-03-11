@@ -78,6 +78,28 @@
   font-size: 25px;
   font-weight: 600;
 }
+.wishlistIconCont{
+   position: relative;
+}
+.wishlistButton{
+   position: absolute;
+   right: 0;
+   top:0;
+   border: none;
+   padding-left:20px;
+   background-color: transparent;
+}
+.wishlistButton .wishlistIcon1{
+    width: 25px !important;
+    height: 25px !important;
+    margin-left: 45px;
+}
+.wishlistButton .wishlistIcon2{
+    width: 25px !important;
+    height: 25px !important;
+    margin-left: 45px;
+}
+
 
 /* banner */
 .HomeBannerImg{
@@ -86,7 +108,7 @@
 }
 /* card css */
 .HomeCardImg {
-    width:140px;
+    width:98% !important;
     height: 120px;
     cursor: pointer;
     transition: transform 0.3s ease-out;

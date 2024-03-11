@@ -14,11 +14,6 @@ function App() {
 
   return (
     <>
-      <div className='Container-fluid topTextBar'>
-        <div className='container'>
-           <p className='text-white text-center'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a href='' className='text-white ms-2'>ShopNow</a></p>
-        </div>
-      </div>
       <BrowserRouter >
         <Routes>
           <Route path="/" element={<Home />} />
