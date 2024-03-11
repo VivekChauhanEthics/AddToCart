@@ -87,10 +87,10 @@ function ProductDetail() {
         dispatch(productDetail(productDetails));
       };
     
-    const relatedProducts = products.filter((item) =>
-        item.category.toLowerCase() === item.category.toLowerCase() &&
-        item.id !== currentItem.id 
-    );
+      const relatedProducts = products.filter((item) =>
+      item.category.toLowerCase() === currentItem.category.toLowerCase() &&
+      item.id !== currentItem.id 
+  );
 
     const handleAddToWishlist = (currentItem) => {
         setAddtoWishList(!addtoWishList);
@@ -116,7 +116,7 @@ function ProductDetail() {
                             <div className=''>
                                 <p className=' p-1 m-0' style={{ fontSize: "20px", fontWeight: "600" }}> {currentItem.title}</p>
                                 <p className=' pb-2 p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Rating:<span style={{color:"#fc530a", fontWeight:"600"}}> {currentItem.rating.rate} </span></p>
-                                <p className=' p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Price: <span className='text-success'>{currentItem.price}</span></p>
+                                <p className=' p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Price: <span className='text-success'>₹{currentItem.price}</span></p>
                                 <p className=' p-1 m-0' style={{ fontSize: "15px", fontWeight: "600" }}>Category: <span style={{color:"#908e91"}}>{currentItem.category}</span></p>
                                 <p className=' p-1 m-0' style={DiscriptionStyle}><span style={{ fontSize: "15px", fontWeight: "600" }}>Description:</span> {currentItem.description}</p>
                             </div>
@@ -139,7 +139,7 @@ function ProductDetail() {
                             </div>
                             <div className=' mt-3 p-1 d-flex gap-2'>
                                 <button size="small" style={{ fontSize: "15px", color: "white", background:"#DB4444" }} className='border-0 px-3 py-1'>Buy Now</button>
-                                <button size="small" style={{ fontSize: "15px", color: "white", background:"#000"  }} className='border-0 px-3 py-1' onClick={() => handleAddToCart(currentItem)}>Add To Card</button>
+                                <button size="small" style={{ fontSize: "15px", color: "white", background:"#000"  }} className='border-0 px-3 py-1' onClick={() => handleAddToCart(currentItem)}>Add To Cart</button>
                                 <button className='Btn wishlistBtn' onClick={() => handleAddToWishlist(currentItem)}>
                                  <img className='wishlistIcon' src={wishlistState.imageSrc} alt='imgWishlist' />
                                 </button>
