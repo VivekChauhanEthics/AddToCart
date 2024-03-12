@@ -17,6 +17,7 @@ import aboutLastContImg1 from './images/about/S1.png';
 import aboutLastContImg2 from './images/about/S2.png';
 import aboutLastContImg3 from './images/about/S3.png';
 import FlashSaleCountdown from './FlashSaleCountdown';
+import SideNavBar from './sideNavBar';
 
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -106,23 +107,13 @@ function Home() {
             <div className='container p-0'>
               <div className='row caroselRow p-0 m-0'>
                 <div className='col-md-3 col-12 d-none d-lg-block' style={{borderRight:"1px solid #D6D5D5"}}>
-                  <div className='container d-flex flex-column gap-2 ms-lg-2' style={{padding:"20px 0 0 0"}}>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Woman's Fashion </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Men’s Fashion </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Electronics </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Home & Lifestyle </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Medicine </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Sports & Outdoor </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Baby’s & Toys </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Groceries & Pets </a>
-                    <a href='#' className='text-dark ' style={{fontSize:"15px", textDecoration:"none"}}>Health & Beauty</a>
-                  </div>
+                 <SideNavBar/>
                 </div>
-                <div id="carouselExampleCaptions" className="carousel col-md-8 col-12 slide pt-lg-4 p-0">
+                <div id="carouselExampleAutoplaying" className="carousel col-md-8 col-12 slide pt-lg-4 p-0" data-bs-ride="carousel" >
                   <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   </div>
                   <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -168,11 +159,11 @@ function Home() {
                       </div>
                     </div>
                   </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                   </button>
-                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                   </button>

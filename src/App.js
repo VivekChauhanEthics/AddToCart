@@ -8,7 +8,15 @@ import Blog from "./components/blog";
 import ProductDetail from './components/productDetail';
 import Signup from './components/Signup';
 import Wishlist from './components/Wishlist';
-
+import WomansFashion from './components/WomansFashion';
+import MensFashion from './components/mensFashion';
+import Jewelery from './components/jewelery';
+import Electronics from './components/electronics';
+import HomeLifestyle from './components/homeAndLifetyle';
+import SportsOutdoor from './components/sportsAndOutdoor';
+import BabysToys from './components/babysAndToys';
+import GroceriesPets from './components/groceriesAndPets';
+import HealthBeauty from './components/healthAndBeauty';
 
 function App() {
 
@@ -24,6 +32,15 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/womansFashion" element={<WomansFashion />} />
+          <Route path="/mensFashion" element={<MensFashion />} />
+          <Route path="/jewelery" element={<Jewelery />} />
+          <Route path="/electronics" element={<Electronics />} />
+          <Route path="/homeLifestyle" element={<HomeLifestyle />} />
+          <Route path="/sportsOutdoor" element={<SportsOutdoor />} />
+          <Route path="/babysToys" element={<BabysToys />} />
+          <Route path="/groceriesPets" element={<GroceriesPets />} />
+          <Route path="/healthBeauty" element={<HealthBeauty />} />
         </Routes>
       </BrowserRouter>
     </>

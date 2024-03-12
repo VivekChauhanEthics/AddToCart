@@ -3,6 +3,22 @@
     background-color: #fff !important;
     color: #000 !important;
 }
+.SideBarListText{
+    font-size: 18px !important;
+    color: #000 !important;
+    font-weight: 600;
+}
+.SideBarActive{
+    color: #E16B00 !important;
+    font-weight: 600;
+    background-color: #e6e1e1;
+    border-radius: 5px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAz0lEQVR4nO3ZQQrCUAyE4fGEiihd6AXMe2fW5BUF0RsoVFrRTXWfhPlAkK4c/hbaChD5YRVbFdxVcG4VK0Q0AAstuFnBMH5U8LCKDhFZwfUzJPSY0wHr6cdnGKOCzWxMwVMr9ohGOcYpZRmnlGWcUpZximW8YhmvWMarVGWsovv1cNYivgP4M6ZHiiEFDZGkOLXs/V5sfrELdoiCI7xgCS9YwguW8IIlvDDedjhhLOGEpSghWKb4M1QFffgRIyu4hB/xPbUKmgmO4/fpIFFOLz7SarSgAoXDAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-position: 240px;
+    background-size: 7%;
+    padding:5px 10px;
+}
 
 /* carosel css */
 .carousel{

@@ -13,7 +13,6 @@
     height:20 !important;
     color:black;
 }
-
 .navbar-toggler:focus {
     box-shadow: none;
 }
@@ -48,8 +47,27 @@
     font-size:16px;
     font-weight: 600;
     color:white;
-    padding:0 0 6px 6px !important;
+    padding:0 0 6px 2px !important;
     line-height: 20px;
+    cursor:pointer;
+}
+.WishlistCountCont{
+    position: relative;
+}
+
+.WishlistCountstyle{
+    position:absolute;
+    right:0;
+    top:-9px;
+    background:red;
+    border-radius:50%;
+    width:18px;
+    height:18px;
+    font-size:16px;
+    font-weight: 600;
+    color:white;
+    padding:0 0 9px 6px !important;
+    line-height: 17px;
     cursor:pointer;
 }
 .profileIconCont{
@@ -70,6 +88,27 @@
 .dropdownMenu{
     --bs-dropdown-min-width: 4rem !important;
     --bs-dropdown-padding-y: 0.5rem !important;
+}
+.dropdown-menu.show {
+    display: block;
+    width: auto;
+    padding: 20px 0;
+}
+.dropdownMenu li{
+  margin-bottom: 7px;
+}
+.dropdownMenu a{
+    cursor: pointer;
+    font-size: 16px ;
+    font-weight: 600;
+}
+.dropdownMenu a img{
+    width: 25px;
+    height: auto;
+    margin-right: 5px;
+}
+.dropdownMenu a:hover{
+    color: rgb(255, 102, 0) !important;
 }
 .active{
     color: rgb(255, 102, 0) !important;
@@ -340,7 +379,7 @@
 }
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
     .hederMainContainer{
-        height:123px;
+        height:130px !important;
     }
     .navbar .container{
         display: flex;
