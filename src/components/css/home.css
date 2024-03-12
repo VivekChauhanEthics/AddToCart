@@ -8,6 +8,9 @@
     color: #000 !important;
     font-weight: 600;
 }
+.SideBarListText:hover{
+    color: #E16B00 !important;
+}
 .SideBarActive{
     color: #E16B00 !important;
     font-weight: 600;
