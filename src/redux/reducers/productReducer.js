@@ -5,6 +5,7 @@ const initialState = {
     productDetails: [],
     upDatedCart:[],
     wishlist: [],
+    orders: [],
   };
   
   const productReducer = (state = initialState, action) => {
@@ -59,14 +60,19 @@ const initialState = {
             wishlist: [...state.wishlist, action.payload],
           };
         } else {
-          return state; 
-        }
-        case 'REMOVE_FROM_WISHLIST':
-          console.log('Reducer - Removing from wishlist:', action.payload);
-          return {
-            ...state,
-            wishlist: state.wishlist.filter((item) => item.id !== action.payload),
-          };
+        return state; 
+      }
+      case 'REMOVE_FROM_WISHLIST':
+        console.log('Reducer - Removing from wishlist:', action.payload);
+        return {
+          ...state,
+          wishlist: state.wishlist.filter((item) => item.id !== action.payload),
+        };
+      case 'PLACE_ORDER':
+        return {
+          ...state,
+          orders: [...state.orders, action.payload]
+        };
 
       default:
         return state;

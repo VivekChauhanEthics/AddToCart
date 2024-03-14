@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import "./css/cart.css";
 import Header from './Header';
 import Footer from "./footer";
@@ -43,7 +44,11 @@ function Cart() {
   };
 
   const TotalDiscount = () => {
-    setDiscount(25);
+    if (cart.length === 0) {
+      setDiscount(0);
+    } else {
+      setDiscount(25);
+    }
   };
 
   const handleRemoveFromCart = (productId) => {
@@ -163,18 +168,29 @@ function Cart() {
             <div className='row AmountCarTStyle'>
               <h4>Cart Total</h4>
               <p>Quantity: {cart.reduce((total, item) => total + item.quantity, 0)}</p>
-              <p style={{borderBottom:"1px solid #D6D5D5"}} className='pb-3'>Amount: ₹{totalAmount.toFixed(2)}</p>
-              <p>Discount: ₹ -{discount}</p>
-              <p style={{borderBottom:"1px solid #D6D5D5"}} className='pb-3'>Delivery Charge: <span className='ps-2 text-success' style={{font:"14px", fontWeight:"400"}}>Free</span></p>
-              <h5>Total Amount: ₹{(totalAmount - discount).toFixed(2)} /-</h5>
-              <div className='text-center mt-3'>
-                <button
-                  className='CartRemoveBtn'
-                  style={{ fontSize:'22px', width:"100%", height:"38px", fontWeight:"600" }}
-                >
-                  Procees to checkout
-                </button>
-              </div>
+              <p style={{borderBottom:"1px solid #D6D5D5", fontWeight:"600"}} className='pb-3'>Subtotal: ₹{totalAmount.toFixed(2)}</p>
+              <p style={{fontWeight:"600", color:"#777c87", fontSize:"17px"}}>Discount: ₹{discount}</p>
+              <p style={{borderBottom:"1px solid #D6D5D5"}} className='pb-3'>Shipping: <span className='ps-2 text-success' style={{font:"14px", fontWeight:"400"}}>Free</span></p>
+              <h5>Total: ₹{(totalAmount - discount).toFixed(2)} /-</h5>
+              {cart.length !== 0 ? (
+                <Link to="/checkout" className='text-center mt-3'>
+                  <button
+                    className='CartRemoveBtn'
+                    style={{ fontSize:'22px', width:"100%", height:"38px", fontWeight:"600" }}
+                  >
+                    Procees to checkout
+                  </button>
+                </Link>
+              ):(
+                <Link to="/" className='text-center mt-3'>
+                  <button
+                    className='CartRemoveBtn'
+                    style={{ fontSize:'22px', width:"100%", height:"38px", fontWeight:"600" }}
+                  >
+                    Procees to checkout
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

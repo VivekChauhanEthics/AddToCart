@@ -49,3 +49,14 @@ export const removeFromWishlist = (productId) => {
     payload: productId,
   };
 };
+
+export const placeOrder = (formData, totalPrice, productDetails) => {
+  return {
+    type: 'PLACE_ORDER',
+    payload: {
+      formData,
+      totalPrice,
+      productDetails
+    },
+  };
+};

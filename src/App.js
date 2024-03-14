@@ -17,6 +17,8 @@ import SportsOutdoor from './components/sportsAndOutdoor';
 import BabysToys from './components/babysAndToys';
 import GroceriesPets from './components/groceriesAndPets';
 import HealthBeauty from './components/healthAndBeauty';
+import Checkout from './components/checkout';
+import Orders from './components/orders';
 
 function App() {
 
@@ -41,6 +43,8 @@ function App() {
           <Route path="/babysToys" element={<BabysToys />} />
           <Route path="/groceriesPets" element={<GroceriesPets />} />
           <Route path="/healthBeauty" element={<HealthBeauty />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </BrowserRouter>
     </>

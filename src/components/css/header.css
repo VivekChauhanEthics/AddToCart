@@ -186,6 +186,16 @@
         --bs-dropdown-min-width: 6rem !important;
         --bs-dropdown-padding-y: 0.1rem !important;
     }
+    .WishlistCountstyle{
+        right:-6px;
+        top:-5px;
+        width:15px;
+        height:15px;
+        font-size:11px;
+        font-weight: 600;
+        padding:0 0 9px 5px !important;
+        line-height: 14px;
+    }
 }
 @media only screen and (min-width: 426px) and (max-width: 767px) {
     .hederMainContainer{
@@ -247,6 +257,16 @@
     .dropdownMenu{
         --bs-dropdown-min-width: 6rem !important;
         --bs-dropdown-padding-y: 0.1rem !important;
+    }
+    .WishlistCountstyle{
+        right:-6px;
+        top:-5px;
+        width:15px;
+        height:15px;
+        font-size:11px;
+        font-weight: 600;
+        padding:0 0 9px 5px !important;
+        line-height: 14px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -312,6 +332,16 @@
         --bs-dropdown-min-width: 6rem !important;
         --bs-dropdown-padding-y: 0.1rem !important;
     }
+    .WishlistCountstyle{
+        right:-2px;
+        top:-9px;
+        width:15px;
+        height:15px;
+        font-size:11px;
+        font-weight: 600;
+        padding:0 0 9px 4px !important;
+        line-height: 14px;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
     .hederMainContainer{
@@ -376,6 +406,16 @@
         --bs-dropdown-min-width: 6rem !important;
         --bs-dropdown-padding-y: 0.1rem !important;
     }
+    .WishlistCountstyle{
+        right:-2px;
+        top:-9px;
+        width:15px;
+        height:15px;
+        font-size:11px;
+        font-weight: 600;
+        padding:0 0 9px 5px !important;
+        line-height: 14px;
+    }
 }
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
     .hederMainContainer{
@@ -439,5 +479,15 @@
     .dropdownMenu{
         --bs-dropdown-min-width: 6rem !important;
         --bs-dropdown-padding-y: 0.1rem !important;
+    }
+    .WishlistCountstyle{
+        right:-2px;
+        top:-9px;
+        width:18px;
+        height:18px;
+        font-size:14px;
+        font-weight: 600;
+        padding:2px 0 9px 5px !important;
+        line-height: 14px;
     }
 }
