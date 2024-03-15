@@ -221,17 +221,17 @@ function Checkout() {
             </div>
             <div className='row checkoutRightCont pt-lg-5 ps-4 ps-lg-0'>
                 <div>
-                    {cart.map((item) => (
-                        <div className='my-lg-2 py-2 px-3' key={item.id}  style={{ background:"rgb(230, 225, 225)", borderRadius:"5px"}}>
-                            <div  style={{ width:'100%',display:"flex"}}>
-                                <img src={item.image} style={{ width: '35px', height: '35px' }} alt={item.title} />
-                                <p className=' p-0 ps-3 m-0' style={{ fontSize: '12px', fontWeight: '600', width:"70%"}}>
-                                {item.title}
-                                </p>
-                                <span className='text-success' style={{fontWeight:"600"}}>₹ {item.price}</span>
-                            </div>
-                        </div>
-                        ))}
+                  {cart.map((item) => (
+                      <div className='my-lg-2 py-2 px-3' key={item.id}  style={{ background:"rgb(230, 225, 225)", borderRadius:"5px"}}>
+                          <div  style={{ width:'100%',display:"flex"}}>
+                              <img src={item.image} style={{ width: '35px', height: '35px' }} alt={item.title} />
+                              <p className=' p-0 ps-3 m-0' style={{ fontSize: '12px', fontWeight: '600', width:"70%"}}>
+                              {item.title}
+                              </p>
+                              <span className='text-success' style={{fontWeight:"600"}}>₹ {item.price}</span>
+                          </div>
+                      </div>
+                      ))}
                 </div>
                 <p style={{borderBottom:"1px solid #D6D5D5", fontWeight:"600"}} className='pb-3 mt-3'>Subtotal: ₹{totalAmount.toFixed(2)}</p>
                 <p style={{borderBottom:"1px solid #D6D5D5"}} className='pb-3'>Shipping: <span className='ps-2 text-success' style={{font:"14px", fontWeight:"400"}}>Free</span></p>
@@ -245,7 +245,7 @@ function Checkout() {
                 </div>
                 {googlePayError && (
                   <div className="text-danger alert-danger ms-3" role="alert" style={{height:"20px", width:"85%", fontSize:"12px"}}>
-                    Google Pay Payment service not available right now!
+                    Google Pay Payment service is not available right now!
                     <button type="button" className="btn-close" aria-label="Close" onClick={dismissError} style={{height:"10px"}}></button>
                   </div>
                 )}

@@ -85,6 +85,15 @@
     width: 20px !important;
 }
 
+.OrderPgTitle {
+    width:35%;
+    display:flex;
+}
+.OrderPgDileveryDate{
+    font-size: 20px;
+}
+
+
 @media only screen and (min-width: 320px) and (max-width: 425px) {
     .cartContainer{
         display: flex;
@@ -113,6 +122,13 @@
     }
     .checkoutRightCont{
         width:100% !important;
+    }
+
+    .OrderPgTitle {
+        width:70%;
+    }
+    .OrderPgDileveryDate{
+        font-size: 14px;
     }
 }
 @media only screen and (min-width: 426px) and (max-width: 767px) {
@@ -144,6 +160,12 @@
     .checkoutRightCont{
         width:100% !important;
     }
+    .OrderPgTitle {
+        width:70%;
+    }
+    .OrderPgDileveryDate{
+        font-size: 16px;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .cartContainer{
@@ -174,6 +196,12 @@
     .checkoutRightCont{
         width:100% !important;
     }
+    .OrderPgTitle {
+        width:40%;
+    }
+    .OrderPgDileveryDate{
+        font-size: 18px;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
     .cartContainer{
@@ -200,6 +228,9 @@
     .CarTStyle{
         padding: 10px;
         width: auto !important;
+    }
+    .OrderPgDileveryDate{
+        font-size: 17px;
     }
 }
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
