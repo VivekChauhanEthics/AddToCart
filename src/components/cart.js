@@ -47,7 +47,8 @@ function Cart() {
     if (cart.length === 0) {
       setDiscount(0);
     } else {
-      setDiscount(25);
+      const randomDiscount = Math.floor(Math.random() * 90) + 10;
+      setDiscount(randomDiscount);
     }
   };
 

@@ -98,6 +98,8 @@
     .cartContainer{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .cartPgHeading{
         margin-left:10px;
@@ -135,6 +137,8 @@
     .cartContainer{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .cartPgHeading{
         margin-left:10px;
@@ -171,6 +175,8 @@
     .cartContainer{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .cartPgHeading{
         margin-left:20px;
@@ -207,6 +213,8 @@
     .cartContainer{
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
     .cartPgHeading{
         margin-left:20px;
@@ -237,6 +245,8 @@
     .cartContainer{
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
     .cartPgHeading{
         margin-left:20px;

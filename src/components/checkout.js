@@ -163,7 +163,7 @@ function Checkout() {
                     <div className="col-md-4">
                         <label for="validationCustom04" className="form-label">State</label>
                         <select className="form-select" id="validationCustom04" name="state" value={formData.state} onChange={handleChange} style={{background: "rgb(230, 225, 225)"}} required>
-                            <option selected disabled value="" >Choose...</option>
+                            <option  disabled value="" >Choose...</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                             <option value="Assam">Assam</option>

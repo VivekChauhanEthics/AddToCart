@@ -122,20 +122,20 @@ function ProductDetail() {
                             </div>
                             <div className='my-3' style={{ display:"flex", gap:"10px", alignItems:"center"}}>
                                 <span style={{fontSize:"16px", fontWeight:"600"}} className='ms-1'>Size :  </span>
-                                <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" />
-                                <label class="btn" for="option5">S</label>
+                                <input type="radio" className="btn-check" name="options-base" id="option5" autocomplete="off" />
+                                <label className="btn" for="option5">S</label>
 
-                                <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off"/>
-                                <label class="btn" for="option6">M</label>
+                                <input type="radio" className="btn-check" name="options-base" id="option6" autocomplete="off"/>
+                                <label className="btn" for="option6">M</label>
 
-                                <input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off"/>
-                                <label class="btn" for="option7">L</label>
+                                <input type="radio" className="btn-check" name="options-base" id="option7" autocomplete="off"/>
+                                <label className="btn" for="option7">L</label>
 
-                                <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off"/>
-                                <label class="btn" for="option8">XL</label>
+                                <input type="radio" className="btn-check" name="options-base" id="option8" autocomplete="off"/>
+                                <label className="btn" for="option8">XL</label>
 
-                                <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off" disabled/>
-                                <label class="btn" for="option8">XXL</label>
+                                <input type="radio" className="btn-check" name="options-base" id="option8" autocomplete="off" disabled/>
+                                <label className="btn" for="option8">XXL</label>
                             </div>
                             <div className=' mt-3 p-1 d-flex gap-2'>
                                 <button size="small" style={{ fontSize: "15px", color: "white", background:"#DB4444" }} className='border-0 px-3 py-1'>Buy Now</button>

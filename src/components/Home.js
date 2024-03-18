@@ -262,7 +262,7 @@ function Home() {
                 <div className=' thisMonthCont' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-lg-5  ms-2' style={{color:"#DB4444"}}>This Month</h4></div>
                 <div className='d-flex thisMonthBtnCont'>
                   <h2 className='mt-lg-0 mt-1 ms-lg-3 me-auto' style={{color:"black"}}>Best Selling Products</h2>
-                  <button className='btn bg-danger text-white me-lg-5 px-lg-5 px-3'>View All</button>
+                  <Link className='' to="/bestSelling"><button className='btn bg-danger text-white me-lg-5 px-lg-5 px-3'>View All</button></Link>
                 </div>
                 <div className="container">
                   <OwlCarousel 
