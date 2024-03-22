@@ -55,6 +55,8 @@ function Home() {
     localStorage.getItem('isLoggedIn') === 'true'
   );
 
+  const [searchResults, setSearchResults] = useState([]);
+
   useEffect(() => {
     dispatch(fetchProduct());
   }, [dispatch]);
@@ -67,16 +69,8 @@ function Home() {
     dispatch(productDetail(productDetails));
   };
 
-  const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchInput.toLowerCase())
-  );
-
-  const bestSellingProducts = filteredProducts.filter((item) => item.rating.rate >= 4.5);
-  const FlashSale = filteredProducts.filter((item) => item.rating.rate <= 3);
+  const bestSellingProducts = products.filter((item) => item.rating.rate >= 4.5);
+  const FlashSale = products.filter((item) => item.rating.rate <= 3);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -95,6 +89,31 @@ function Home() {
 
     document.body.classList.remove(currentTheme);
     document.body.classList.add(currentTheme === 'theme-light' ? 'theme-dark' : 'theme-light');
+  };
+
+  const handleSearchInputChange = (e) => {
+    const inputValue = e.target.value;
+    setSearchInput(inputValue);
+
+    if (inputValue.trim() === '') {
+        setSearchResults([]);
+    } else {
+        const filteredProducts = products.filter((product) =>
+            product.title.toLowerCase().includes(inputValue.toLowerCase())
+        );
+        const truncatedResults = filteredProducts.map((product) => ({
+          ...product,
+          title: product.title.length > 30 ? `${product.title.slice(0, 30)}...` : product.title
+      }));
+        setSearchResults(truncatedResults);
+    }
+   };
+
+  const handleSearchResultClick = (productId) => {
+    const product = products.find((item) => item.id === productId);
+    if (product) {
+      handleProductDetail(product);
+    }
   };
 
   return (
@@ -177,18 +196,33 @@ function Home() {
               <div className='row'>
                 <div className='searchCont'>
                   <div className='' style={{display:"flex", alignItems:"center"}}><span></span><h4 className='mt-5 ms-2' style={{color:"#DB4444"}}>Todays</h4></div>
-                  <div className="d-flex justify-content-center searchInputCont me-lg-5 mt-5">
-                    <input
-                      type="text"
-                      placeholder="What are you looking for?"
-                      value={searchInput}
-                      onChange={handleSearchInputChange}
-                      className='border-0 w-100 bg-transparent'
-                    />
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                      </svg>
+                  <div className='searchCont2' >
+                    <div className="d-flex justify-content-center searchInputCont me-lg-5 mt-5">
+                      <input
+                        type="text"
+                        placeholder="What are you looking for?"
+                        value={searchInput}
+                        onChange={handleSearchInputChange}
+                        className='w-100 bg-transparent'
+                        style={{border:"none", boxShadow:"none"}}
+                      />
+                      <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                      </div>
+                    </div>
+                    {/* Search results */}
+                    <div className="container searchResultsListCont">
+                      <ul className="searchResultsList list-unstyled">
+                        {searchResults.map((item) => (
+                          <li key={item.id} className=' searchInputCont ' style={{cursor:"pointer"}} onClick={() => handleProductDetail(item)}>
+                            <Link className='results' to="./productDetail" onClick={() => handleSearchResultClick(item.id)}>
+                              {item.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -359,7 +393,7 @@ function Home() {
                           },
                         }}
                       >
-                      {filteredProducts.map((item) => (
+                      {products.map((item) => (
                         <div className='item CardStyle my-4'  key={item.id}>
                           <Link to="/productDetail" onClick={() => handleProductDetail(item)}>
                             <div className='text-center ps-2'>
@@ -424,5 +458,6 @@ function Home() {
     </div>
   );
 }
+
 
 export default Home;

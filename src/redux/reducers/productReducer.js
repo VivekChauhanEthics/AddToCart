@@ -6,6 +6,7 @@ const initialState = {
     upDatedCart:[],
     wishlist: [],
     orders: [],
+    cancelledOrders: [],
   };
   
   const productReducer = (state = initialState, action) => {
@@ -18,7 +19,6 @@ const initialState = {
       case 'ADD_TO_CART':
         const existingProductIndex = state.cart.findIndex(item => item.id === action.payload.id);
         if (existingProductIndex !== -1) {
-          // Product is already in the cart, update quantity
           const updatedCart = [...state.cart];
           updatedCart[existingProductIndex].quantity += 1;
           return {
@@ -26,7 +26,6 @@ const initialState = {
             cart: updatedCart,
           };
         } else {
-          // Product is not in the cart, add as a new entry
           return {
             ...state,
             cart: [...state.cart, action.payload],
@@ -72,6 +71,18 @@ const initialState = {
         return {
           ...state,
           orders: [...state.orders, action.payload]
+        };
+
+      case 'ADD_CANCELLED_ORDER':
+        return {
+          ...state,
+          cancelledOrders: [...state.cancelledOrders, action.payload],
+        };
+      
+      case 'REMOVE_ORDER':
+        return {
+          ...state,
+          orders: state.orders.filter((order, index) => index !== action.payload),
         };
 
       default:

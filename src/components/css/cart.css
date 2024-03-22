@@ -92,7 +92,13 @@
 .OrderPgDileveryDate{
     font-size: 20px;
 }
-
+.cancellList{
+    font-size: 16px;
+    font-weight: 500;
+}
+.cancellList:hover{
+  background-color: #f1cdcd;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 425px) {
     .cartContainer{

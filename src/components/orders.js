@@ -4,9 +4,9 @@ import "./css/cart.css";
 import Header from './Header';
 import Footer from "./footer";
 import LoginForm from './login';
-import Cancellation from './cancellationOrder'; 
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addCancelledOrder, removeOrder   } from '../redux/action/action';
 
 const OrdersStyle = {
   display: '-webkit-box',
@@ -22,6 +22,7 @@ const OrdersStyle = {
 
 
 function Orders() {
+
   const Myorders = useSelector((state) => state.product.orders);
   console.log("orders component", Myorders);
 
@@ -68,11 +69,14 @@ function Orders() {
     const maxLength = 20;
     return title.length > maxLength ? `${title.slice(0, maxLength)}...` : title;
   };
+
+  const dispatch = useDispatch();
+
   const handleCancelOrder = (orderIndex) => {
     const cancelledOrder = Myorders[orderIndex];
     setCancelledOrders([...cancelledOrders, cancelledOrder]);
-    const updatedOrders = Myorders.filter((order, index) => index !== orderIndex);
-    // Update state or dispatch action to update Redux store with updated orders
+    dispatch(addCancelledOrder(cancelledOrder)); 
+    dispatch(removeOrder(orderIndex));
   };
 
   return (
@@ -115,10 +119,19 @@ function Orders() {
                               <p className='' style={{ fontWeight: "600", color: "green" }}>₹{product.price}</p>
                             </div>
                           ))}
-                          <button onClick={() => handleCancelOrder(orderIndex)}>Cancel Order</button>
+                          <div class="dropdown  w-50">
+                            <button style={{backgroundColor:"#DB4444", color:"#fff", fontWeight:"600"}} class="btn dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Cancel Order
+                            </button>
+                            <ul class="dropdown-menu w-50">
+                                <li><a class="dropdown-item pt-0 border-bottom" style={{ color:"#000", fontWeight:"600", fontSize:"18px"}}>Are you sure? <img className='ms-3' style={{width:"25px"}} src="data:image/png;base64,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"/></a></li>
+                                <li className='cancellList' onClick={() => handleCancelOrder(orderIndex)} ><a class="dropdown-item border-bottom cancellList" href="#">Yes</a></li>
+                                <li className='cancellList'><a class="dropdown-item border-bottom cancellList" href="#">No</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                      <h5 className='mb-3 ps-lg-3 bg-' style={{fontWeight:"650"}}><span>Total Payable Amount:</span> ₹{order.totalPrice} /-</h5>
+                      <h5 className='mb-3 ps-lg-3 bg-' style={{fontWeight:"650"}}><span>Total Payable Amount:</span> ₹{order.totalPrice.toFixed(2)} /-</h5>
                     </div>
                   ))}
                 </div>

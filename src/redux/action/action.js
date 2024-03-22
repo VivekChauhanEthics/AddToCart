@@ -60,3 +60,15 @@ export const placeOrder = (formData, totalPrice, productDetails) => {
     },
   };
 };
+
+export const addCancelledOrder = (cancelledOrder) => ({
+  type: 'ADD_CANCELLED_ORDER',
+  payload: cancelledOrder,
+});
+
+export const removeOrder = (orderIndex) => {
+  return {
+    type: 'REMOVE_ORDER',
+    payload: orderIndex,
+  };
+};

@@ -30,7 +30,7 @@ function BabysToys() {
     };
 
     const toggleTheme = () => {
-        const currentTheme = document.body.classList.contains('theme-light')
+        const currentTheme = document.body.classList.contains('theme-light')  
         ? 'theme-light'
         : 'theme-dark';
 
